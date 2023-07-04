@@ -1,0 +1,180 @@
+.menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  list-style: none;
+  height: 100vh;
+  width: 40%;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 200;
+  display: none;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.menuItem {
+  border-bottom: 1px solid rgba(141, 141, 141, 0.481);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms;
+  height: 3rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.dropDown {
+  color: var(--main-color);
+}
+
+.dropDown span {
+  margin-right: 5px;
+}
+
+.menuItem:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.menuItem a {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+.buttons {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.buttons a {
+  border-radius: 10px;
+  border: 1px solid;
+  width: 75%;
+  height: 3rem;
+  text-decoration: none;
+
+  display: grid;
+  place-items: center;
+  color: var(--main-color);
+  transition: 300ms;
+}
+
+.buttons a:hover {
+  color: white;
+  background-color: var(--main-color);
+}
+
+.shadow {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.252);
+  z-index: 100;
+  display: none;
+}
+
+.menuIn {
+  animation: menu-in 500ms forwards;
+}
+
+.menuOut {
+  animation: menu-out 500ms forwards;
+}
+
+.shadowIn {
+  animation: shadow-in 500ms forwards;
+}
+
+.shadowOut {
+  animation: shadow-out 500ms forwards;
+}
+
+@keyframes menu-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes menu-out {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shadow-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes shadow-out {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu {
+    width: 70%;
+    display: flex;
+  }
+  .shadow {
+    display: inherit;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .menu {
+    width: 50%;
+    display: flex;
+  }
+  .shadow {
+    display: inherit;
+  }
+}
+
+.slideIn {
+  animation: slide-in 400ms forwards;
+}
+
+.slideOut {
+  animation: slide-out 400ms forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

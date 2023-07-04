@@ -1,0 +1,31 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 4rem;
+  height: var(--nav-bar-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 400ms;
+  z-index: 99;
+}
+
+.shrink {
+  height: 4rem !important;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    height: var(--nav-bar-sm);
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .navbar {
+    height: var(--nav-bar-md);
+    padding: 0 3rem;
+  }
+}

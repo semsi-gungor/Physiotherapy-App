@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  min-height: 30rem;
+  background-color: rgb(21, 27, 44);
+  display: flex;
+  padding: 0 4rem;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  gap: 4rem;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  position: absolute;
+  color: white;
+  bottom: 1rem;
+}

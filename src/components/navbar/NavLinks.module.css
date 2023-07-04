@@ -1,0 +1,127 @@
+.list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+}
+
+.listItem {
+  font-size: 1.1rem;
+  color: rgb(0, 176, 220);
+  cursor: pointer;
+  transition: all 200ms;
+  flex: auto;
+}
+
+.listItem:hover {
+  color: rgb(0, 130, 163);
+}
+
+.listItem a {
+  text-decoration: none;
+  color: rgb(0, 176, 220);
+  transition: all 200ms;
+}
+
+.listItem a:hover {
+  text-decoration: none;
+  color: rgb(0, 130, 163);
+}
+
+.listItem::after {
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: rgb(0, 130, 163);
+  display: block;
+  border-radius: 5px;
+
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: 400ms;
+}
+
+.listItem:hover:after {
+  transform: scaleX(1);
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+  background-color: blue;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+}
+
+.btn a:hover {
+  background-color: rgb(46, 46, 255);
+}
+
+@media (max-width: 1120px) {
+  .list {
+    display: none;
+  }
+}
+
+.dropDown {
+  position: absolute;
+  top: 3rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 100, 100, 0.574);
+  overflow: hidden;
+}
+
+.dropItem {
+  width: 15rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.dropItem a {
+  color: black;
+}
+
+.dropItem:hover a {
+  color: white;
+}
+
+.dropItem:hover {
+  background-color: var(--main-color);
+}
+
+.slideIn {
+  animation: slide-in 300ms forwards;
+}
+
+.slideOut {
+  animation: slide-out 300ms forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
