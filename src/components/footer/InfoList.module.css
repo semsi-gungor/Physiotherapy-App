@@ -38,3 +38,35 @@
   font-weight: 600;
   padding: 1rem 0;
 }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .list p {
+    font-size: 0.8rem;
+  }
+
+  .list a {
+    font-size: 0.8rem;
+  }
+
+  .listHeader {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .list p {
+    font-size: 1rem;
+  }
+
+  .list a {
+    font-size: 0.9rem;
+  }
+
+  .listHeader {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}

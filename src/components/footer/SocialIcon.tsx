@@ -29,7 +29,7 @@ export default function SocialIcon({
         setColor("rgb(39, 39, 64)");
       }}
     >
-      <Icon size={25} />
+      <Icon />
     </a>
   );
 }
