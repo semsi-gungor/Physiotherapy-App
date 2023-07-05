@@ -4,6 +4,7 @@ import InfoList from "./InfoList";
 import SocialContainer from "./SocialContainer";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
+import { BiMap, BiPhone, BiEnvelope } from "react-icons/bi";
 
 export default function Footer() {
   return (
@@ -17,24 +18,45 @@ export default function Footer() {
 
       <InfoList header="İletişim Bilgileri">
         <li>
-          <Link href={"/"}>Adres</Link>
+          <p>
+            <BiMap />
+            Adres
+          </p>
         </li>
         <li>
-          <Link href={"/"}>Adres</Link>
+          <p>
+            <BiEnvelope />
+            Email
+          </p>
         </li>
         <li>
-          <Link href={"/"}>Adres</Link>
+          <p>
+            <BiPhone />
+            Telefon
+          </p>
         </li>
       </InfoList>
-      <InfoList header="İletişim Bilgileri">
+      <InfoList header="Hizmetlerimiz">
         <li>
-          <Link href={"/"}>Adres</Link>
+          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
         </li>
         <li>
-          <Link href={"/"}>Adres</Link>
+          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
         </li>
         <li>
-          <Link href={"/"}>Adres</Link>
+          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
+        </li>
+        <li>
+          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
+        </li>
+        <li>
+          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
+        </li>
+        <li>
+          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
+        </li>
+        <li>
+          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
         </li>
       </InfoList>
 

@@ -2,8 +2,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
+  padding: 2rem 0;
+  min-width: 350px;
+  max-width: 500px;
+  flex-grow: none;
 }
 
 .list {
@@ -11,6 +13,16 @@
   flex-direction: column;
   justify-content: center;
   list-style: none;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.list p {
+  font-size: 1.2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .list a {
