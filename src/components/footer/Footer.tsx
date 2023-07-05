@@ -1,21 +1,12 @@
 import Link from "next/link";
 import classes from "./Footer.module.css";
 import InfoList from "./InfoList";
+import SocialContainer from "./SocialContainer";
 
 export default function Footer() {
   return (
     <footer className={classes.footer}>
-      <InfoList header="İletişim Bilgileri">
-        <li>
-          <Link href={"/"}>Adres</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Adres</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Adres</Link>
-        </li>
-      </InfoList>
+      <SocialContainer />
       <InfoList header="İletişim Bilgileri">
         <li>
           <Link href={"/"}>Adres</Link>
