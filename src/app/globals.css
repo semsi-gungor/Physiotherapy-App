@@ -6,11 +6,14 @@
   --main-color: rgb(0, 176, 220);
 
   --color-1: #e6e6e6;
+  --color-1-h: #d6d6d6;
   --color-2: #dfebf6;
   --color-3: #aac7d8;
   --color-4: #768a96;
   --color-5: #44576d;
   --color-6: #29353c;
+
+  --color-c: #f79327;
 }
 
 *,

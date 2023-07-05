@@ -42,16 +42,12 @@ export default function SideMenu() {
           <ul
             className={`${isDropdownOpen ? classes.slideIn : classes.slideOut}`}
           >
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
-            <li className={classes.menuItem}>as</li>
+            <li className={classes.dropDownItem}>as</li>
+            <li className={classes.dropDownItem}>as</li>
+            <li className={classes.dropDownItem}>as</li>
+            <li className={classes.dropDownItem}>as</li>
+            <li className={classes.dropDownItem}>as</li>
+            <li className={classes.dropDownItem}>as</li>
           </ul>
         </CSSTransition>
 
