@@ -19,7 +19,7 @@
 
 .list p {
   font-size: 1.2rem;
-  color: white;
+  color: var(--color-1);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -27,14 +27,19 @@
 
 .list a {
   text-decoration: none;
-  color: white;
+  color: var(--color-1);
   font-size: 1rem;
+  transition: 300ms;
+}
+
+.list a:hover {
+  color: var(--color-3);
 }
 
 .listHeader {
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid var(--color-1);
   font-size: 2rem;
-  color: white;
+  color: var(--color-1);
   font-weight: 600;
   padding: 1rem 0;
 }

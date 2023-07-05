@@ -12,7 +12,7 @@ import { useContext } from "react";
 import { uiContext } from "@/context/uiControl";
 
 export default function Navbar() {
-  const [isScrollDown, isOnTop, goToTop] = useScroll();
+  const { isScrollOnTop: isOnTop } = useScroll();
   const uiCtx = useContext(uiContext);
 
   return (

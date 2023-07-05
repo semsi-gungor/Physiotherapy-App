@@ -1,0 +1,43 @@
+.container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(59, 59, 59, 0.716);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.407);
+}
+
+.slideIn {
+  animation: slide-in 300ms forwards;
+}
+
+.slideOut {
+  animation: slide-out 300ms forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(200px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(200px);
+  }
+}

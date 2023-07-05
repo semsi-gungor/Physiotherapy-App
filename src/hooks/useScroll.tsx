@@ -7,7 +7,7 @@ export default function useScroll() {
   const [isScrollOnTop, setIsScrollOnTop] = useState(true);
 
   function scrollHandler() {
-    let position = window.pageYOffset;
+    let position = window.scrollY;
 
     if (position > 100) {
       setIsScrollOnTop(false);
@@ -40,5 +40,5 @@ export default function useScroll() {
     });
   };
 
-  return [scrollDirection, isScrollOnTop, scrollToTop];
+  return { scrollDirection, isScrollOnTop, scrollToTop };
 }

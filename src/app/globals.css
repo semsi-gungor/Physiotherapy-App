@@ -4,6 +4,13 @@
   --nav-bar-sm: 4rem;
   --main-padding: 0 10rem;
   --main-color: rgb(0, 176, 220);
+
+  --color-1: #e6e6e6;
+  --color-2: #dfebf6;
+  --color-3: #aac7d8;
+  --color-4: #768a96;
+  --color-5: #44576d;
+  --color-6: #29353c;
 }
 
 *,

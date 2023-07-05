@@ -3,6 +3,7 @@ import { Nunito } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import UIContextProvier from "@/context/uiControl";
 import Footer from "@/components/footer/Footer";
+import ScrollToTop from "@/components/ui/scroll-to-top/ScrollToTop";
 
 export const metadata = {
   title: "App",
@@ -22,13 +23,14 @@ export default function RootLayout({
     <html lang="tr">
       <body
         className={newFont.className}
-        style={{ position: "relative", backgroundColor: "#dedede" }}
+        style={{ position: "relative", backgroundColor: "var(--color-1)" }}
       >
         <UIContextProvier>
           <Navbar />
         </UIContextProvier>
         {children}
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

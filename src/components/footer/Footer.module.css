@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   min-height: 30rem;
-  background-color: rgb(21, 27, 44);
+  background-color: var(--color-6);
   display: flex;
   padding: 0 4rem;
   padding-top: 2rem;
@@ -22,7 +22,7 @@
 
 .copyright {
   position: absolute;
-  color: white;
+  color: var(--color-1);
   bottom: 1rem;
   font-size: 0.8rem;
 }
