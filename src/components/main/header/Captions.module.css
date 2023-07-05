@@ -11,6 +11,72 @@
 }
 
 .container p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
+  opacity: 0;
+  position: absolute;
+}
+
+.bracket {
+  width: 80%;
+  height: 3px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 5rem;
+}
+
+.up {
+  animation: up 1000ms 2200ms forwards;
+}
+
+.down {
+  animation: down 1000ms 3000ms forwards;
+}
+
+.doubleUp {
+  animation: up 1000ms 1000ms forwards, double-up 1000ms 2000ms forwards;
+}
+
+.grow {
+  animation: grow 1000ms forwards;
+}
+
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes up {
+  0% {
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes double-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-80%);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(30%);
+  }
 }
