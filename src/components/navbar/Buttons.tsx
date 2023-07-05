@@ -1,6 +1,7 @@
 "use client";
 import classes from "./Buttons.module.css";
 import Link from "next/link";
+import Button from "../ui/button/Button";
 
 export default function Buttons() {
   return (
