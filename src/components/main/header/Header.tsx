@@ -3,6 +3,7 @@
 import classes from "./Header.module.css";
 import Image from "next/image";
 import bg from "../../../../public/bg-2.jpg";
+import Captions from "./Captions";
 
 export default function Header() {
   return (
@@ -13,6 +14,7 @@ export default function Header() {
         style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "cover" }}
         quality={100}
       />
+      <Captions />
     </header>
   );
 }
