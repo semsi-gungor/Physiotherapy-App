@@ -48,11 +48,11 @@
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .container h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .container p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .container a {

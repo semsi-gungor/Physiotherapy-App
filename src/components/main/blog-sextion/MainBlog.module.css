@@ -1,16 +1,17 @@
 .blog {
   width: 100%;
-  height: 100vh;
-
+  min-height: 100vh;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .posts {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 10vw;
+  padding: 5rem 10vw;
   gap: 1rem;
+  background-color: var(--color-white);
 }
 
 .imageContainer {
@@ -37,5 +38,6 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .posts {
     padding: 5vh 5vw;
+    gap: 0.5rem;
   }
 }

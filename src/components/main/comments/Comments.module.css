@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  background-color: var(--color-white);
+  padding: 5rem;
+  border-radius: 10px;
+  margin-bottom: 10rem;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container {
+    gap: 2rem;
+    padding: 1rem;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .container {
+    gap: 3rem;
+    padding: 5rem;
+  }
+}

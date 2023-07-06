@@ -9,11 +9,12 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: var(--color-white);
   cursor: pointer;
-  transition: all 200ms;
+  transition: all 300ms;
 }
 
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 25px;
+  transform: translateY(-5px);
 }
 
 .imageContainer {
