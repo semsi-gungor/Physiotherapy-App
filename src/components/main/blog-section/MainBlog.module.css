@@ -1,8 +1,9 @@
 .blog {
-  width: 100%;
+  width: calc(100vw - (100vw - 100%));
   min-height: 100vh;
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
 }
 
 .posts {

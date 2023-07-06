@@ -4,7 +4,7 @@ import classes from "./page.module.css";
 import Header from "@/components/main/header/Header";
 import MainWrapper from "@/components/ui/main-wrapper/MainWrapper";
 import ServiceCardContainer from "@/components/main/services-section/ServiceCardContainer";
-import MainBlog from "@/components/main/blog-sextion/MainBlog";
+import MainBlog from "@/components/main/blog-section/MainBlog";
 import Title from "@/components/main/title/Title";
 import CommentsContainer from "@/components/main/comments/CommentsContainer";
 import { LuHelpingHand, LuPencil } from "react-icons/lu";
