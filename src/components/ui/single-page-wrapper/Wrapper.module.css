@@ -1,0 +1,20 @@
+.wrapper {
+  width: calc(100vw - (100vw - 100%));
+  min-height: 100vh;
+  background-color: var(--color-1);
+  margin-top: var(--nav-bar-lg);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .wrapper {
+    margin-top: var(--nav-bar-sm);
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .wrapper {
+    margin-top: var(--nav-bar-md);
+  }
+}
