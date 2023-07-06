@@ -8,10 +8,11 @@ type Props = {
 
 export default function MainWrapper({ children }: Props) {
   return (
-    <div className={classes.wrapper}>
+    <>
       <header className={classes.header}>
-        <h2>Hizmetlerimiz</h2>
+        <h1>Hizmetlerimiz</h1>
       </header>
-    </div>
+      <div className={classes.wrapper}>{children}</div>
+    </>
   );
 }
