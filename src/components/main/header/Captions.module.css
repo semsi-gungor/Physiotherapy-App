@@ -5,8 +5,7 @@
   top: 30vh;
   left: 10vw;
   color: var(--color-5);
-  width: 40%;
-
+  width: 50%;
   font-family: "Poppins", sans-serif;
 }
 
@@ -78,5 +77,37 @@
   100% {
     opacity: 1;
     transform: translateY(30%);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container {
+    top: 20vh;
+    left: 5vw;
+    width: 90%;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .bracket {
+    display: block;
+    position: absolute;
+    top: 4.5rem;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .container {
+    top: 30vh;
+    left: 5vw;
+    width: 60%;
+  }
+
+  .container p {
+    font-size: 1.2rem;
   }
 }
