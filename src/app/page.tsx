@@ -4,6 +4,7 @@ import classes from "./page.module.css";
 import Header from "@/components/main/header/Header";
 import MainWrapper from "@/components/ui/main-wrapper/MainWrapper";
 import ServiceCardContainer from "@/components/main/services-section/ServiceCardContainer";
+import MainBlog from "@/components/main/blog-sextion/MainBlog";
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
       <MainWrapper title="Hizmetlerimiz">
         <ServiceCardContainer />
       </MainWrapper>
-      <MainWrapper title="Blog" />
+      <MainWrapper title="Blog">
+        <MainBlog />
+      </MainWrapper>
     </main>
   );
 }
