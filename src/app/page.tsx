@@ -5,17 +5,18 @@ import Header from "@/components/main/header/Header";
 import MainWrapper from "@/components/ui/main-wrapper/MainWrapper";
 import ServiceCardContainer from "@/components/main/services-section/ServiceCardContainer";
 import MainBlog from "@/components/main/blog-sextion/MainBlog";
+import Title from "@/components/main/title/Title";
 
 export default function Home() {
   return (
     <main className={classes.main}>
       <Header />
-      <MainWrapper title="Hizmetlerimiz">
+      <Title title="hizmetler" />
+      <MainWrapper>
         <ServiceCardContainer />
       </MainWrapper>
-      <MainWrapper title="Blog">
-        <MainBlog />
-      </MainWrapper>
+      <Title title="blog" />
+      <MainBlog />
     </main>
   );
 }
