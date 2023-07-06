@@ -1,5 +1,5 @@
-import MainWrapper from "@/components/ui/main-wrapper/MainWrapper";
+import Wrapper from "@/components/ui/single-page-wrapper/Wrapper";
 
 export default function Signup() {
-  return <MainWrapper>signup</MainWrapper>;
+  return <Wrapper>signup</Wrapper>;
 }
