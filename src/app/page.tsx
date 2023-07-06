@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <main className={classes.main}>
       <Header />
-      <MainWrapper>
+      <MainWrapper title="Hizmetlerimiz">
         <ServiceCardContainer />
       </MainWrapper>
-      <MainWrapper />
+      <MainWrapper title="Blog" />
     </main>
   );
 }
