@@ -22,7 +22,14 @@ export default function CommentsContainer() {
   return (
     <div className={classes.container}>
       {comments.map((comment, index) => {
-        return <Comment key={index} name={comment.name} text={comment.text} />;
+        return (
+          <Comment
+            key={index}
+            name={comment.name}
+            text={comment.text}
+            queue={index}
+          />
+        );
       })}
     </div>
   );

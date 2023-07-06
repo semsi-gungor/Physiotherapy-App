@@ -1,6 +1,7 @@
 .commentBody {
   display: flex;
   gap: 2rem;
+  opacity: 0;
 }
 
 .profile {
@@ -36,6 +37,21 @@
   background-color: var(--color-1);
   clip-path: polygon(0 25%, 50% 100%, 100% 50%);
   transform: translate(-15px, -15px);
+}
+
+.slideIn {
+  animation: slide-in 800ms forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mobile */
