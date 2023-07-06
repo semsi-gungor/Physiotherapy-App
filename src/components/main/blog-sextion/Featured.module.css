@@ -29,3 +29,33 @@
 .container:hover a {
   transform: translateX(20px);
 }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container h3 {
+    font-size: 1rem;
+  }
+
+  .container p {
+    font-size: 0.8rem;
+  }
+
+  .container a {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .container h3 {
+    font-size: 1.3rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .container a {
+    font-size: 1rem;
+  }
+}
