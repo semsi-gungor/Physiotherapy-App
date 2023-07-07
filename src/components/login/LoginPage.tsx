@@ -3,10 +3,8 @@
 import classes from "./LoginPage.module.css";
 import Input from "../ui/input/Input";
 import { useForm, FieldValues } from "react-hook-form";
-
-// type FormValues = {
-//   name: string; // form için gerekli olan bütün fieldları kendimiz tanımlayabiliriz submition da dönen data bu tipte olur ayrıca useForm<FormValues> şeklinde oluşturulmalıdır. Bu'da registerın tipinin FormValues'e dönüşmesini sağlar
-// };
+import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
 
 export default function LoginPage() {
   const form = useForm({ mode: "all" });
@@ -14,60 +12,72 @@ export default function LoginPage() {
 
   const { errors } = formState;
 
-  const nameRegister = {
-    ...register("name", {
-      required: { value: true, message: "Name is required." },
-    }),
-  };
-
-  const emailRegister = {
-    ...register("email", {
-      pattern: {
-        value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-        message: "Email is invalid.",
-      },
-      validate: {
-        notAdmin: (fieldValue) => {
-          return (
-            fieldValue !== "admin@example.com" ||
-            "Enter a diffrent email address"
-          );
-        },
-        notBlackListed: (fieldValue) => {
-          return (
-            !fieldValue.endsWith("baddomain.com") ||
-            "This domain is not supported"
-          );
-        },
-      },
-    }),
-  };
-
-  console.log(errors ? errors : "");
-
   function onSubmit(data: FieldValues) {
     console.log("submitted", data);
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Input
-          name="name"
-          register={nameRegister}
-          type="text"
-          label="name"
-          errorMessage="Error"
-        />
-        {/* <span>{errors.name?.message?.toString()}</span> */}
+    <div className={classes.formPage}>
+      <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+        <header>ÜYE GİRİŞİ</header>
         <Input
           name="email"
-          register={emailRegister}
+          register={register}
           type="email"
-          label="email"
+          label="Email"
+          errorMessage={errors.email?.message?.toString()}
         />
-        <button type="submit">Giriş Yap</button>
+        <Input
+          name="password"
+          register={register}
+          type="password"
+          label="Şifre"
+          errorMessage={errors.password?.message?.toString()}
+        />
+        <button>Giriş Yap</button>
+        <button>
+          <span>
+            <FcGoogle />
+          </span>
+          Google ile giriş yap
+        </button>
+        <Link href={"/"}>Şifremi Unuttum</Link>
       </form>
+      <div className={classes.redirect}>
+        <h1>HESAP AÇMAK MI İSTİYORSUNUZ?</h1>
+        <Link href={"/"}>
+          <button>KAYDOLUN</button>
+        </Link>
+      </div>
     </div>
   );
 }
+
+// const emailRegister = {
+//   ...register("email", {
+//     pattern: {
+//       value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+//       message: "Email is invalid.",
+//     },
+//     validate: {
+//       notAdmin: (fieldValue) => {
+//         return (
+//           fieldValue !== "admin@example.com" ||
+//           "Enter a diffrent email address"
+//         );
+//       },
+//       notBlackListed: (fieldValue) => {
+//         return (
+//           !fieldValue.endsWith("baddomain.com") ||
+//           "This domain is not supported"
+//         );
+//       },
+//     },
+//   }),
+// };
+
+// const passwordRegister = {
+//   ...register("name", {
+//     required: { value: true, message: "Şifre girilmesi zorunlu." },
+//   }),
+// };
