@@ -26,6 +26,10 @@ export default function LoginPage() {
           type="email"
           label="Email"
           errorMessage={errors.email?.message?.toString()}
+          pattern={{
+            value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            message: "Hatalı e-mail girişi.",
+          }}
         />
         <Input
           name="password"
@@ -33,6 +37,9 @@ export default function LoginPage() {
           type="password"
           label="Şifre"
           errorMessage={errors.password?.message?.toString()}
+          validate={(password) => {
+            return password.length > 7 || "Şifre en az 8 haneli olmalıdır.";
+          }}
         />
         <button>Giriş Yap</button>
         <button>
@@ -45,7 +52,7 @@ export default function LoginPage() {
       </form>
       <div className={classes.redirect}>
         <h1>HESAP AÇMAK MI İSTİYORSUNUZ?</h1>
-        <Link href={"/"}>
+        <Link href={"/sign-up"}>
           <button>KAYDOLUN</button>
         </Link>
       </div>

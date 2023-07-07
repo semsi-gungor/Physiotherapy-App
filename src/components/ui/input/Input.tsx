@@ -11,6 +11,10 @@ type Props = {
   register: UseFormRegister<FieldValues>;
   required?: string;
   errorMessage?: string;
+  pattern?: { value: RegExp; message: string };
+  validate?: (password: string) => boolean | string;
+  max?: { value: number; message: string };
+  min?: { value: number; message: string };
 };
 
 export default function Input({
@@ -18,10 +22,19 @@ export default function Input({
   name,
   label,
   errorMessage,
+  pattern,
+  max,
+  min,
   register,
+  validate,
+  required,
 }: Props) {
   const inputRegister = register(name, {
     required: { value: true, message: `${label} boş bırakılamaz.` },
+    pattern: pattern,
+    validate: validate,
+    max: max,
+    min: min,
   });
 
   return (
@@ -32,6 +45,8 @@ export default function Input({
         className={classes.input}
         type={type}
         {...inputRegister}
+        min={min?.value}
+        max={max?.value}
       />
       <label htmlFor={name} className={classes.label}>
         {label}
