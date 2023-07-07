@@ -52,7 +52,7 @@ export default function LoginPage() {
       </form>
       <div className={classes.redirect}>
         <h1>HESAP AÇMAK MI İSTİYORSUNUZ?</h1>
-        <Link href={"/sign-up"}>
+        <Link href={"/uye-kaydi"}>
           <button>KAYDOLUN</button>
         </Link>
       </div>
