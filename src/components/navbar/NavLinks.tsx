@@ -59,7 +59,7 @@ export default function NavLinks() {
         <Link href={"/"}>Hakkımızda</Link>
       </li>
       <li className={classes.listItem}>
-        <Link href={"/"}>İletişim</Link>
+        <Link href={"/iletisim"}>İletişim</Link>
       </li>
     </ul>
   );
