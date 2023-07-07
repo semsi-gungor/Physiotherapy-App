@@ -16,6 +16,8 @@
   --color-white: #fff;
 
   --color-c: #f79327;
+
+  --error: rgb(255, 94, 65);
 }
 
 *,
