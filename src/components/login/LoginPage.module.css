@@ -1,8 +1,9 @@
 .formPage {
   width: 80%;
-  height: 37rem;
+  min-height: 140%;
   display: flex;
-  gap: 10%;
+  gap: 10rem;
+  padding: 5rem 0;
 }
 
 .form {
@@ -83,4 +84,36 @@
 
 .redirect button:hover {
   background-color: var(--color-5);
+}
+
+@media (max-width: 700px) {
+  .form button {
+    width: 80%;
+    height: 8vh;
+    font-size: 0.9rem;
+  }
+  .formPage {
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .redirect h1 {
+    font-size: 1.5rem;
+  }
+
+  .form header {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .formPage {
+    flex-direction: column;
+    gap: 7rem;
+  }
+  .form button {
+    width: 70%;
+    height: 8vh;
+    font-size: 0.9rem;
+  }
 }
