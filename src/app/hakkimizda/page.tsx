@@ -1,9 +1,8 @@
 import { FC } from "react";
+import AboutPage from "@/components/about/AboutPage";
 
-interface Props {}
-
-const Page: FC<Props> = ({}) => {
-  return <div></div>;
+const Page: FC = ({}) => {
+  return <AboutPage />;
 };
 
 export default Page;

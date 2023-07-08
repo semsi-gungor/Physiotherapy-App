@@ -33,13 +33,13 @@
 }
 
 .slideIn {
-  animation: slide-in 1000ms forwards;
+  animation: slide-in 800ms forwards;
 }
 
 @keyframes slide-in {
   0% {
-    opacity: 0.5;
-    transform: translateX(-100px);
+    opacity: 0;
+    transform: translateX(-20px);
   }
   100% {
     opacity: 1;
