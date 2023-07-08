@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  height: 6rem;
+  font-size: 2.5rem;
+  color: var(--color-6);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: 300ms;
+}
+
+.container:hover {
+  box-shadow: rgba(96, 96, 96, 0.353) 0px 5px 15px 0px;
+}
+
+.container div {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.container p {
+  font-size: 1.2rem;
+  color: var(--color-6);
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}

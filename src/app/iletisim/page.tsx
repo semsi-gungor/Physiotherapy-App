@@ -1,16 +1,5 @@
-import Wrapper from "@/components/ui/single-page-wrapper/Wrapper";
-import Title from "@/components/main/title/Title";
-import { AiOutlineComment } from "react-icons/ai";
+import ContactPage from "@/components/contact/ContactPage";
 
-export default function ContactPage() {
-  return (
-    <>
-      <Wrapper>
-        <Title title="İletişim" icon={AiOutlineComment} />
-      </Wrapper>
-      <Wrapper>
-        <Title title="İletişim" icon={AiOutlineComment} />
-      </Wrapper>
-    </>
-  );
+export default function Contact() {
+  return <ContactPage />;
 }
