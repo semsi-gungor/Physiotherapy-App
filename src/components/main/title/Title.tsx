@@ -1,5 +1,3 @@
-"use client";
-
 import classes from "./Title.module.css";
 import { IconType } from "react-icons/lib";
 

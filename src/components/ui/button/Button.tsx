@@ -1,53 +1,41 @@
-"use client";
-
+import { FC } from "react";
 import classes from "./Button.module.css";
 
-type Props = {
+interface ButtonProps {
+  variant?: "primary" | "outlined";
+  size?: "sm" | "md" | "lg" | "full" | "half" | "thqurters";
   children: React.ReactNode;
-  color?: string;
-  size?: "sm" | "md" | "lg";
-  fill?: boolean;
-  round?: "sm" | "md" | "lg";
-  type?: "button" | "reset" | "submit";
-  disabled?: boolean;
-  onHover?: string;
-  onClick: () => void;
-} & (OutlinedProps | PrimaryProps | TextProps);
+  onClick?: () => void;
+}
 
-type OutlinedProps = {
-  variant: "outlined";
-  borderColor?: string;
-};
+const Button: FC<ButtonProps> = ({ children, variant, size }) => {
+  let classNames = `${classes.button}`;
 
-type PrimaryProps = {
-  variant: "primary";
-  backgroundColor?: string;
-};
-
-type TextProps = {
-  variant: "text";
-};
-
-export default function Button(props: Props) {
-  let buttonVariant;
-
-  if (props.variant === "outlined") {
-    buttonVariant = classes.outlined;
-  } else if (props.variant === "primary") {
-    buttonVariant = classes.primary;
+  if (variant === "outlined") {
+    classNames += ` ${classes.outlined}`;
   } else {
-    buttonVariant = classes.text;
+    classNames += ` ${classes.primary}`;
   }
 
-  return (
-    <button
-      className={`${classes.button} ${
-        props.disabled ? classes.disabled : ""
-      } ${buttonVariant} ${props.round ? classes.round : ""}`}
-      type={props.type ? props.type : "button"}
-      onClick={props.onClick}
-    >
-      {props.children}
-    </button>
-  );
-}
+  if (size === "md") {
+    classNames += ` ${classes.md}`;
+  } else if ("lg") {
+    classNames += ` ${classes.lg}`;
+  } else if ("thqurters") {
+    classNames += ` ${classes.thqurters}`;
+  } else if ("full") {
+    classNames += ` ${classes.full}`;
+  } else {
+    classNames += ` ${classes.half}`;
+  }
+
+  return <button className={classNames}>{children}</button>;
+
+  //   return (
+  //     <button className={`${classes.button} ${classes.primary} ${classes.md}`}>
+  //       {children}
+  //     </button>
+  //   );
+};
+
+export default Button;
