@@ -3,6 +3,7 @@ import classes from "./ContactPage.module.css";
 import Wrapper from "@/components/ui/single-page-wrapper/Wrapper";
 import Title from "@/components/main/title/Title";
 import { AiOutlineComment } from "react-icons/ai";
+import { BsPenFill } from "react-icons/bs";
 import ContactMain from "./ContactMain";
 import ContactForm from "./ContactForm";
 
@@ -16,7 +17,7 @@ const ContactPage: FC<ContactPageProps> = ({}) => {
         <ContactMain />
       </Wrapper>
       <Wrapper inpage>
-        <Title title="İletişim" icon={AiOutlineComment} />
+        <Title title="İletişim Formu" icon={BsPenFill} />
         <ContactForm />
       </Wrapper>
     </div>

@@ -1,0 +1,14 @@
+.form {
+  width: 50%;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  height: 8rem;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  resize: none;
+}
