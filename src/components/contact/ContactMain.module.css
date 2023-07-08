@@ -16,3 +16,23 @@
   flex: 3;
   background-color: aquamarine;
 }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+  .map {
+    flex: 2;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .container {
+    width: 90%;
+  }
+  .map {
+    flex: 2;
+  }
+}

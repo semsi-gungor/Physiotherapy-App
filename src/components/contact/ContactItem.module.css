@@ -27,3 +27,24 @@
   display: flex;
   align-items: center;
 }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container {
+    font-size: 1.8rem;
+    height: 5rem;
+  }
+  .container p {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .container {
+    font-size: 1.8rem;
+  }
+  .container p {
+    font-size: 1rem;
+  }
+}
