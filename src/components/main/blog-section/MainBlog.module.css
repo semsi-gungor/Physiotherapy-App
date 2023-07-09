@@ -2,7 +2,6 @@
   width: calc(100vw - (100vw - 100%));
   min-height: 100vh;
   display: flex;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
 }
 
@@ -53,6 +52,16 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+.shadow {
+  animation: cast-shadow 400ms 1300ms forwards;
+}
+
+@keyframes cast-shadow {
+  100% {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
 

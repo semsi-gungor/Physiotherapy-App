@@ -26,15 +26,15 @@
 }
 
 .up {
-  animation: up 1000ms 2200ms forwards;
+  animation: up 1000ms 1400ms forwards;
 }
 
 .down {
-  animation: down 1000ms 3000ms forwards;
+  animation: down 1000ms 1800ms forwards;
 }
 
 .doubleUp {
-  animation: up 1000ms 1000ms forwards, double-up 1000ms 2000ms forwards;
+  animation: up 1000ms 500ms forwards, double-up 1000ms 1200ms forwards;
 }
 
 .grow {

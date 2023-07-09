@@ -56,7 +56,7 @@ export default function NavLinks() {
         <Link href={"/"}>Blog</Link>
       </li>
       <li className={classes.listItem}>
-        <Link href={"/"}>Hakkımızda</Link>
+        <Link href={"/hakkimizda"}>Hakkımızda</Link>
       </li>
       <li className={classes.listItem}>
         <Link href={"/iletisim"}>İletişim</Link>

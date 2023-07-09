@@ -13,7 +13,10 @@ export default function MainBlog() {
   });
 
   return (
-    <div className={classes.blog} ref={ref}>
+    <div
+      className={`${classes.blog} ${inView ? classes.shadow : ""}`}
+      ref={ref}
+    >
       <div className={`${classes.posts} ${inView ? classes.slideInLeft : ""}`}>
         <FeaturedPost />
         <FeaturedPost />

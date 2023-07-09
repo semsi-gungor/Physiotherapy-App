@@ -33,7 +33,7 @@
 }
 
 .slideIn {
-  animation: slide-in 800ms forwards;
+  animation: slide-in 800ms ease forwards;
 }
 
 @keyframes slide-in {
