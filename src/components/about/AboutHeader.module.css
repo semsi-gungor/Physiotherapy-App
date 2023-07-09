@@ -10,8 +10,8 @@
   height: 15vh;
 
   background-color: var(--color-white);
-  color: var(--color-6);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: var(--color-2);
+  text-align: center;
   bottom: -7vh;
   left: 0;
   right: 0;
@@ -20,4 +20,22 @@
   margin: auto;
   display: grid;
   place-items: center;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .header {
+    font-size: 0.7rem;
+    width: 90%;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .header {
+    font-size: 0.8rem;
+    width: 90%;
+  }
 }

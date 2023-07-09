@@ -41,7 +41,41 @@
 }
 
 @media (max-width: 700px) {
+  .container {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 3vh;
+    padding: 3vh;
+    margin-top: 10rem;
+  }
+
+  .imageContainer {
+    grid-area: 1 / 1 / 7 / 6;
+  }
+
+  .article {
+    grid-area: 7 / 1 / 10 / 6;
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  .who {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.7rem;
+    top: -4rem;
+    left: 5px;
+  }
 }
 
 @media (min-width: 701px) and (max-width: 1120px) {
+  .container {
+    gap: 5vh;
+    padding: 5vh;
+  }
+  .who {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.7rem;
+  }
 }
