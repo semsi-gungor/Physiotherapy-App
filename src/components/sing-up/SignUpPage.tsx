@@ -107,7 +107,7 @@ export default function SignUpPage() {
           <div className={classes.notify}>
             <input type="checkbox" id="kvkk" {...checkBoxRegister} />
             <label htmlFor="kvkk">
-              KVKK uyarınca ilgili <Link href={"/"}>Bilgilendirme</Link> 'yi
+              KVKK uyarınca ilgili <Link href={"/"}>Bilgilendirme</Link>&apos;yi
               okudum.Kişisel verilerimin belirtilen kapsamda işlenmesini kabul
               ediyorum.
             </label>

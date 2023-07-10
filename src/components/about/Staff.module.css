@@ -1,10 +1,24 @@
 .container {
   width: 100%;
-  min-height: 100vh;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-auto-rows: 500px;
   gap: 4rem;
   padding: 2rem 8rem;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container {
+    gap: 4rem;
+    padding: 2rem 1rem;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .container {
+    gap: 4rem;
+    padding: 2rem 2rem;
+  }
 }
