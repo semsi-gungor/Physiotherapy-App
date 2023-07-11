@@ -4,6 +4,18 @@
   display: flex;
   gap: 10rem;
   padding: 5rem 0;
+
+  animation: slide-in ease 400ms forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .form {

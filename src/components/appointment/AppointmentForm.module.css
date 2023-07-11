@@ -3,6 +3,17 @@
   flex-direction: column;
   align-items: center;
   width: 60%;
+  animation: slide-in ease 400ms forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .select {
@@ -19,7 +30,6 @@
   padding: 0.5rem;
   border-radius: 10px;
   border: none;
-  background-color: var(--color-white);
   margin: 1rem 0;
   border: 1px solid rgb(195, 195, 195);
 }
