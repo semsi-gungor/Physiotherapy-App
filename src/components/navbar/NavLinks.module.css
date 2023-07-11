@@ -85,6 +85,7 @@
   border: 1px solid var(--color-5);
   overflow: hidden;
   padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .dropItem {
@@ -96,13 +97,15 @@
 }
 
 .dropItem a {
-  color: var(--color-6);
+  color: var(--color-6) !important;
   justify-content: flex-start;
   margin-left: 0.5rem;
+  font-weight: 500 !important;
+  font-size: 0.9rem;
 }
 
 .dropItem:hover a {
-  color: var(--color-1);
+  color: var(--color-1) !important;
 }
 
 .dropItem:hover {

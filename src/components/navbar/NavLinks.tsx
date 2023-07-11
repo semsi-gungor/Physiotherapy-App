@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { usePathname } from "next/navigation";
+import { services } from "@/dummy-api/services";
 
 const navItems = [
   { title: "Ana Sayfa", href: "/" },
@@ -53,21 +54,21 @@ export default function NavLinks() {
                     isDrop ? classes.slideIn : classes.slideOut
                   }`}
                 >
-                  <li className={classes.dropItem}>
-                    <Link href={"/"}>Lorem Ipsum</Link>
-                  </li>
-                  <li className={classes.dropItem}>
-                    <Link href={"/"}>Lorem Ipsum</Link>
-                  </li>
-                  <li className={classes.dropItem}>
-                    <Link href={"/"}>Lorem Ipsum</Link>
-                  </li>
-                  <li className={classes.dropItem}>
-                    <Link href={"/"}>Lorem Ipsum</Link>
-                  </li>
-                  <li className={classes.dropItem}>
-                    <Link href={"/"}>Lorem Ipsum</Link>
-                  </li>
+                  {services.map((service) => {
+                    return (
+                      <li
+                        key={service.id}
+                        className={classes.dropItem}
+                        onClick={() => {
+                          setIsDrop(!isDrop);
+                        }}
+                      >
+                        <Link href={`/hizmetlerimiz/${service.id}`}>
+                          {service.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
               </CSSTransition>
             </li>
@@ -86,13 +87,3 @@ export default function NavLinks() {
     </ul>
   );
 }
-
-/*<li
-        className={classes.listItem}
-        style={{ position: "relative", padding: "1rem 0" }}
-        onMouseEnter={showDrop}
-        onMouseLeave={hideDrop}
-      >
-        <span>Hizmetlerimiz</span>
-        
-      </li> */
