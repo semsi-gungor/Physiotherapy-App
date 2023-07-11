@@ -3,7 +3,7 @@ import classes from "./Button.module.css";
 
 interface ButtonProps {
   variant?: "primary" | "outlined";
-  size?: "sm" | "md" | "lg" | "full" | "half" | "thqurters";
+  size?: "sm" | "md" | "lg" | "full" | "half" | "thquarters";
   children: React.ReactNode;
   onClick?: () => void;
 }
@@ -19,11 +19,11 @@ const Button: FC<ButtonProps> = ({ children, variant, size }) => {
 
   if (size === "md") {
     classNames += ` ${classes.md}`;
-  } else if ("lg") {
+  } else if (size === "lg") {
     classNames += ` ${classes.lg}`;
-  } else if ("thqurters") {
+  } else if (size === "thquarters") {
     classNames += ` ${classes.thqurters}`;
-  } else if ("full") {
+  } else if (size === "full") {
     classNames += ` ${classes.full}`;
   } else {
     classNames += ` ${classes.half}`;

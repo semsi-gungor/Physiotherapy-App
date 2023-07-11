@@ -47,12 +47,15 @@
 
 .full {
   width: 100%;
+  height: 3rem;
 }
 
 .half {
   width: 50%;
+  height: 3rem;
 }
 
 .thqurters {
   width: 75%;
+  height: 3rem;
 }
