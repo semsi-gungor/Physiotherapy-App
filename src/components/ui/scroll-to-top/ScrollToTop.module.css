@@ -12,6 +12,7 @@
   border-radius: 50%;
   font-size: 1.5rem;
   background-color: rgba(255, 255, 255, 0.407);
+  z-index: 400;
 }
 
 .slideIn {

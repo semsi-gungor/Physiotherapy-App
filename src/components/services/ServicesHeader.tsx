@@ -8,25 +8,31 @@ import { services } from "@/dummy-api/services";
 import { motion, useAnimation } from "framer-motion";
 
 const ServicesHeader: FC = ({}) => {
+  const [isShow, setIsShow] = useState(true);
   const [serviceIndex, setServiceIndex] = useState(0);
 
   const animate = useAnimation();
 
-  // useEffect(() => {
-  //   let interval = setInterval(() => {
-  //     setServiceIndex((prev) => {
-  //       if (prev < 7) {
-  //         return prev + 1;
-  //       } else {
-  //         return 0;
-  //       }
-  //     });
+  useEffect(() => {
+    if (isShow) {
+      animate.start("pop");
+      setServiceIndex((prev) => {
+        if (prev < 7) {
+          return prev + 1;
+        } else {
+          return 0;
+        }
+      });
+    } else {
+      animate.start("hiddenUp");
+    }
 
-  //     return () => {
-  //       clearInterval(interval);
-  //     };
-  //   }, 3800);
-  // }, []);
+    const interval = setInterval(() => {
+      setIsShow(!isShow);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [isShow]);
 
   return (
     <Wrapper background={bg}>
@@ -41,29 +47,9 @@ const ServicesHeader: FC = ({}) => {
           animate={animate}
           transition={{ duration: 0.8, ease: "linear" }}
         >
+          {/* {services[serviceIndex].title} */}
           {services[serviceIndex].title}
         </motion.h1>
-        <button
-          onClick={() => {
-            animate.start("hiddenUp");
-          }}
-        >
-          a
-        </button>
-        <button
-          onClick={() => {
-            animate.start("hiddenDown");
-          }}
-        >
-          b
-        </button>
-        <button
-          onClick={() => {
-            animate.start("pop");
-          }}
-        >
-          c
-        </button>
       </div>
     </Wrapper>
   );
