@@ -10,9 +10,11 @@ export default function Buttons() {
           GİRİŞ YAP
         </Button>
       </Link>
-      <Button size="md" variant="outlined">
-        RANDEVU AL
-      </Button>
+      <Link href="randevu-alma">
+        <Button size="md" variant="outlined">
+          RANDEVU AL
+        </Button>
+      </Link>
     </div>
   );
 }

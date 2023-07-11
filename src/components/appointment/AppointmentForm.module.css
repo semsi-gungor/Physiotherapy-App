@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.select label {
+  color: var(--color-4);
+}
+
+.select select {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--color-white);
+  margin: 1rem 0;
+  border: 1px solid rgb(195, 195, 195);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--color-4);
+}
+
+.message textarea {
+  height: 5rem;
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  resize: none;
+}

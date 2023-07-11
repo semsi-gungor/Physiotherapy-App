@@ -76,6 +76,7 @@
   border-radius: 10px;
   border: 1px solid var(--color-5);
   overflow: hidden;
+  padding: 0.5rem;
 }
 
 .dropItem {
@@ -85,7 +86,8 @@
   align-items: center;
   padding-left: 1rem;
   cursor: pointer;
-  transition: 300ms;
+  transition: 200ms;
+  border-radius: 10px;
 }
 
 .dropItem a {

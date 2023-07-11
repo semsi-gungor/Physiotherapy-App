@@ -45,7 +45,7 @@ const StaffCard: FC = ({}) => {
         }}
         initial="hidden"
         animate={animate}
-        transition={{ duration: 0.4, delay: 1 }}
+        transition={{ duration: 0.4, delay: 1.8 }}
         className={classes.name}
       >
         Doctor NAME
