@@ -3,8 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
   position: relative;
+  height: 100%;
+  width: auto;
 }
 
 .listItem {
@@ -12,52 +13,59 @@
   color: var(--color-5);
   cursor: pointer;
   transition: all 200ms;
-  flex: auto;
-}
-
-.listItem:hover {
-  color: var(--color-6);
+  width: 8rem;
+  height: 3rem;
+  border-radius: 10px;
+  position: relative;
 }
 
 .listItem a {
   text-decoration: none;
   color: var(--color-5);
   transition: all 200ms;
-}
-
-.listItem a:hover {
-  text-decoration: none;
-  color: var(--color-6);
-}
-
-.listItem::after {
-  content: "";
-  height: 3px;
   width: 100%;
-  background-color: var(--color-6);
-  display: block;
-  border-radius: 5px;
-
-  transform-origin: center;
-  transform: scaleX(0);
-  transition: 400ms;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.listItem:hover:after {
-  transform: scaleX(1);
+.listItem:hover {
+  background-color: #768a9648;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.btn a {
-  text-decoration: none;
-  color: var(--color-1);
-  background-color: var(--color-5);
-  padding: 0.5rem 1rem;
-  border-radius: 40px;
+.active {
+  color: var(--color-6);
+  font-weight: 800;
 }
 
-.btn a:hover {
-  background-color: var(--color-5);
-}
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
 
 @media (max-width: 1120px) {
   .list {
@@ -82,9 +90,6 @@
 .dropItem {
   width: 15rem;
   height: 3rem;
-  display: flex;
-  align-items: center;
-  padding-left: 1rem;
   cursor: pointer;
   transition: 200ms;
   border-radius: 10px;
@@ -92,6 +97,8 @@
 
 .dropItem a {
   color: var(--color-6);
+  justify-content: flex-start;
+  margin-left: 0.5rem;
 }
 
 .dropItem:hover a {
