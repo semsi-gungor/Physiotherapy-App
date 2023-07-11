@@ -1,10 +1,10 @@
 import { FC } from "react";
-import Wrapper from "@/components/ui/single-page-wrapper/Wrapper";
+import ServicesPage from "@/components/services/ServicesPage";
 
 interface Props {}
 
 const Page: FC<Props> = ({}) => {
-  return <Wrapper>da</Wrapper>;
+  return <ServicesPage />;
 };
 
 export default Page;

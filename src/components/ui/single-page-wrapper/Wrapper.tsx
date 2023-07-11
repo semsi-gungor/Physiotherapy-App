@@ -15,17 +15,18 @@ export default function Wrapper({ children, inpage, background }: Props) {
           {children}
         </div>
         {background && (
-          <Image
-            src={background}
-            alt="bg"
-            style={{
-              width: "100vh",
-              height: "100%",
-              objectFit: "cover",
-              position: "absolute",
-              zIndex: "10",
-            }}
-          />
+          <div className={classes.imageContainer}>
+            <Image
+              src={background}
+              quality={100}
+              alt="bg"
+              style={{
+                objectFit: "cover",
+                position: "absolute",
+                zIndex: "10",
+              }}
+            />
+          </div>
         )}
       </div>
     );
@@ -35,18 +36,20 @@ export default function Wrapper({ children, inpage, background }: Props) {
     <div className={classes.wrapper}>
       <div className={classes.children}>{children}</div>
       {background && (
-        <Image
-          src={background}
-          alt="bg"
-          quality={100}
-          style={{
-            width: "105%",
-            height: "100%",
-            objectFit: "cover",
-            position: "absolute",
-            zIndex: "10",
-          }}
-        />
+        <div className={classes.imageContainer}>
+          <Image
+            src={background}
+            quality={100}
+            alt="bg"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              position: "absolute",
+              zIndex: "10",
+            }}
+          />
+        </div>
       )}
     </div>
   );
