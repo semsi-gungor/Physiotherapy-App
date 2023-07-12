@@ -29,9 +29,27 @@ const HeaderInput: FC = ({}) => {
         </ToolBarSection>
         <ToolBarDivider />
         <ToolBarSection>
-          <RadioInput label="LG" register={register} name="size" value="lg" />
-          <RadioInput label="MD" register={register} name="size" value="md" />
-          <RadioInput label="SM" register={register} name="size" value="sm" />
+          <RadioInput
+            id="LG"
+            label="LG"
+            register={register}
+            name="size"
+            value="lg"
+          />
+          <RadioInput
+            id="MD"
+            label="MD"
+            register={register}
+            name="size"
+            value="md"
+          />
+          <RadioInput
+            id="SM"
+            label="SM"
+            register={register}
+            name="size"
+            value="sm"
+          />
         </ToolBarSection>
       </ToolBar>
       <Input
