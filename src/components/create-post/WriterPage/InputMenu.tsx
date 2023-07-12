@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useContext } from "react";
+import { uiContext } from "@/context/uiControl";
 import classes from "./InputMenu.module.css";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -15,6 +16,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const InputMenu: FC = ({}) => {
   const [isOpen, setIsOpen] = useState(false);
+  const uiCtx = useContext(uiContext);
 
   return (
     <div className={classes.menu}>
@@ -39,27 +41,44 @@ const InputMenu: FC = ({}) => {
                   exit={{ opacity: 0 }}
                 >
                   <DropdownMenu.Item asChild>
-                    <li className={classes.listItem}>
+                    <li
+                      className={classes.listItem}
+                      onClick={() => {
+                        uiCtx.displayInputModal();
+                      }}
+                    >
                       <MdTitle />
                     </li>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <li className={classes.listItem}>
+                    <li
+                      className={classes.listItem}
+                      onClick={uiCtx.displayInputModal}
+                    >
                       <BsTextParagraph />
                     </li>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <li className={classes.listItem}>
+                    <li
+                      className={classes.listItem}
+                      onClick={uiCtx.displayInputModal}
+                    >
                       <BsListUl />
                     </li>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <li className={classes.listItem}>
+                    <li
+                      className={classes.listItem}
+                      onClick={uiCtx.displayInputModal}
+                    >
                       <BsBlockquoteLeft />
                     </li>
                   </DropdownMenu.Item>
                   <DropdownMenu.Item asChild>
-                    <li className={classes.listItem}>
+                    <li
+                      className={classes.listItem}
+                      onClick={uiCtx.displayInputModal}
+                    >
                       <BsFileEarmarkImage />
                     </li>
                   </DropdownMenu.Item>
