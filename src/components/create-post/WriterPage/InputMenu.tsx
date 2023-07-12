@@ -14,7 +14,13 @@ import {
 import { MdTitle } from "react-icons/md";
 import { motion, AnimatePresence } from "framer-motion";
 
-const InputMenu: FC = ({}) => {
+type InputType = "text" | "list" | "quote" | "header" | "image";
+
+type InputMenuProps = {
+  onChange: (payload: InputType) => void;
+};
+
+const InputMenu: FC<InputMenuProps> = ({ onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const uiCtx = useContext(uiContext);
 
@@ -44,6 +50,7 @@ const InputMenu: FC = ({}) => {
                     <li
                       className={classes.listItem}
                       onClick={() => {
+                        onChange("header");
                         uiCtx.displayInputModal();
                       }}
                     >
@@ -53,7 +60,10 @@ const InputMenu: FC = ({}) => {
                   <DropdownMenu.Item asChild>
                     <li
                       className={classes.listItem}
-                      onClick={uiCtx.displayInputModal}
+                      onClick={() => {
+                        onChange("text");
+                        uiCtx.displayInputModal();
+                      }}
                     >
                       <BsTextParagraph />
                     </li>
@@ -61,7 +71,10 @@ const InputMenu: FC = ({}) => {
                   <DropdownMenu.Item asChild>
                     <li
                       className={classes.listItem}
-                      onClick={uiCtx.displayInputModal}
+                      onClick={() => {
+                        onChange("list");
+                        uiCtx.displayInputModal();
+                      }}
                     >
                       <BsListUl />
                     </li>
@@ -69,7 +82,10 @@ const InputMenu: FC = ({}) => {
                   <DropdownMenu.Item asChild>
                     <li
                       className={classes.listItem}
-                      onClick={uiCtx.displayInputModal}
+                      onClick={() => {
+                        onChange("quote");
+                        uiCtx.displayInputModal();
+                      }}
                     >
                       <BsBlockquoteLeft />
                     </li>
@@ -77,7 +93,10 @@ const InputMenu: FC = ({}) => {
                   <DropdownMenu.Item asChild>
                     <li
                       className={classes.listItem}
-                      onClick={uiCtx.displayInputModal}
+                      onClick={() => {
+                        onChange("image");
+                        uiCtx.displayInputModal();
+                      }}
                     >
                       <BsFileEarmarkImage />
                     </li>
