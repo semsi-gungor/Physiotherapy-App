@@ -1,5 +1,5 @@
 import { FC } from "react";
-import classes from "./TextPost.module.css";
+import classes from "./QuotePost.module.css";
 import { BlogPart } from "@/types/blog-posts";
 
 interface QuotePostProps {
