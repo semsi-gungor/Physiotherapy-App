@@ -4,6 +4,7 @@ import classes from "./Header.module.css";
 import Image from "next/image";
 import bg from "../../../../public/bg-2.jpg";
 import Captions from "./Captions";
+import ArrowButton from "@/components/ui/button/ArrowButton";
 
 export default function Header() {
   return (
@@ -15,6 +16,9 @@ export default function Header() {
         quality={100}
       />
       <Captions />
+      {/* <div className={classes.buttonContainer}>
+        <ArrowButton title="RANDEVU AL" />
+      </div> */}
     </header>
   );
 }

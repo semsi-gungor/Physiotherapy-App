@@ -1,6 +1,7 @@
 import classes from "./Buttons.module.css";
 import Link from "next/link";
 import Button from "../ui/button/Button";
+import ArrowButton from "../ui/button/ArrowButton";
 
 export default function Buttons() {
   return (
