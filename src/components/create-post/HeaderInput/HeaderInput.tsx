@@ -10,6 +10,7 @@ import RadioInput from "@/components/ui/input/RadioInput";
 import ToolBar from "../ToolBar/ToolBar";
 import ToolBarSection from "../ToolBar/ToolBarSection";
 import ToolBarDivider from "../ToolBar/ToolBarDivider";
+import { BlogPart } from "@/types/blog-posts";
 
 const HeaderInput: FC = ({}) => {
   const form = useForm({ mode: "all" });
@@ -18,7 +19,12 @@ const HeaderInput: FC = ({}) => {
   const { errors } = formState;
 
   function onSubmit(data: FieldValues) {
-    console.log("submitted", data);
+    let HeaderPost: BlogPart = {
+      postType: "header",
+      postContent: data.header,
+      options: { color: data.color, size: data.size },
+    };
+    console.log(HeaderPost);
   }
 
   return (

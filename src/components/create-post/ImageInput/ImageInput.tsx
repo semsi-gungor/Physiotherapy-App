@@ -6,7 +6,7 @@ import Input from "@/components/ui/input/Input";
 import ToolBar from "../ToolBar/ToolBar";
 import { useForm, FieldValues } from "react-hook-form";
 import Button from "@/components/ui/button/Button";
-import ToolBarDivider from "../ToolBar/ToolBarDivider";
+import { BlogPart } from "@/types/blog-posts";
 import ToolBarSection from "../ToolBar/ToolBarSection";
 import RadioInput from "@/components/ui/input/RadioInput";
 
@@ -19,7 +19,12 @@ const ImageInput: FC<ImageInputProps> = ({}) => {
   const { errors } = formState;
 
   function onSubmit(data: FieldValues) {
-    console.log("submitted", data);
+    let HeaderPost: BlogPart = {
+      postType: "image",
+      postContent: [data.url, data.title],
+      options: { size: data.size },
+    };
+    console.log(HeaderPost);
   }
 
   return (

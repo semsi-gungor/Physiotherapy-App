@@ -11,6 +11,7 @@ import ColorInput from "@/components/ui/input/ColorInput";
 import RadioInput from "@/components/ui/input/RadioInput";
 import { BsTextLeft, BsTextCenter, BsTextRight } from "react-icons/bs";
 import Button from "@/components/ui/button/Button";
+import { BlogPart } from "@/types/blog-posts";
 
 const QuoteInput: FC = ({}) => {
   const form = useForm({ mode: "all" });
@@ -19,7 +20,13 @@ const QuoteInput: FC = ({}) => {
   const { errors } = formState;
 
   function onSubmit(data: FieldValues) {
-    console.log("submitted", data);
+    let HeaderPost: BlogPart = {
+      postType: "quote",
+      postContent: data.text,
+      options: { color: data.color, textAlignment: data.textAlignment },
+    };
+
+    console.log(HeaderPost);
   }
   return (
     <form className={classes.container} onSubmit={handleSubmit(onSubmit)}>

@@ -10,6 +10,7 @@ import {
   AiOutlineOrderedList,
   AiOutlineUnorderedList,
 } from "react-icons/ai";
+import { BlogPart } from "@/types/blog-posts";
 import ToolBar from "../ToolBar/ToolBar";
 import ToolBarSection from "../ToolBar/ToolBarSection";
 import RadioInput from "@/components/ui/input/RadioInput";
@@ -35,7 +36,15 @@ const ListInput: FC<ListInputProps> = ({}) => {
 
   function onSubmit(data: FieldValues) {
     let { listStyle, ...rest } = data;
-    console.log({ listStyle: listStyle, list: { ...rest } });
+
+    let array = Object.values(rest);
+
+    let HeaderPost: BlogPart = {
+      postType: "list",
+      postContent: array,
+      options: { listType: data.listStyle },
+    };
+    console.log(HeaderPost);
   }
 
   return (
