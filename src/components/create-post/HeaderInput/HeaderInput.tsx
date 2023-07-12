@@ -1,6 +1,7 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { blogContext } from "@/context/blogContext";
 import classes from "./HeaderInput.module.css";
 import Input from "@/components/ui/input/Input";
 import { useForm, FieldValues } from "react-hook-form";
@@ -13,6 +14,8 @@ import ToolBarDivider from "../ToolBar/ToolBarDivider";
 import { BlogPart } from "@/types/blog-posts";
 
 const HeaderInput: FC = ({}) => {
+  const blogCtx = useContext(blogContext);
+
   const form = useForm({ mode: "all" });
   const { register, handleSubmit, formState } = form;
 
@@ -24,7 +27,9 @@ const HeaderInput: FC = ({}) => {
       postContent: data.header,
       options: { color: data.color, size: data.size },
     };
-    console.log(HeaderPost);
+
+    blogCtx.addPost(HeaderPost);
+    console.log(blogCtx.postArray);
   }
 
   return (

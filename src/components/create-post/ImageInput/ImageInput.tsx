@@ -1,6 +1,7 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { blogContext } from "@/context/blogContext";
 import classes from "./ImageInput.module.css";
 import Input from "@/components/ui/input/Input";
 import ToolBar from "../ToolBar/ToolBar";
@@ -13,6 +14,7 @@ import RadioInput from "@/components/ui/input/RadioInput";
 interface ImageInputProps {}
 
 const ImageInput: FC<ImageInputProps> = ({}) => {
+  const blogCtx = useContext(blogContext);
   const form = useForm({ mode: "all" });
   const { register, handleSubmit, formState } = form;
 
@@ -24,7 +26,9 @@ const ImageInput: FC<ImageInputProps> = ({}) => {
       postContent: [data.url, data.title],
       options: { size: data.size },
     };
-    console.log(HeaderPost);
+
+    blogCtx.addPost(HeaderPost);
+    console.log(blogCtx.postArray);
   }
 
   return (

@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useContext, useState } from "react";
+import { blogContext } from "@/context/blogContext";
 import classes from "./OrderedListInput.module.css";
 import Input from "@/components/ui/input/Input";
 import { useForm, FieldValues } from "react-hook-form";
@@ -27,6 +28,8 @@ initialState.push({ index: 1, content: "" });
 interface ListInputProps {}
 
 const ListInput: FC<ListInputProps> = ({}) => {
+  const blogCtx = useContext(blogContext);
+
   const [inputArray, setInputArray] = useState(initialState);
 
   const form = useForm({ mode: "all" });
@@ -44,7 +47,9 @@ const ListInput: FC<ListInputProps> = ({}) => {
       postContent: array,
       options: { listType: data.listStyle },
     };
-    console.log(HeaderPost);
+
+    blogCtx.addPost(HeaderPost);
+    console.log(blogCtx.postArray);
   }
 
   return (

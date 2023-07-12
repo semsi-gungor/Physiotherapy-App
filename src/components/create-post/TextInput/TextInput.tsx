@@ -1,6 +1,7 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { blogContext } from "@/context/blogContext";
 import classes from "./TextInput.module.css";
 import TextareaInput from "@/components/ui/input/TextareaInput";
 import { useForm, FieldValues } from "react-hook-form";
@@ -14,6 +15,7 @@ import Button from "@/components/ui/button/Button";
 import { BlogPart } from "@/types/blog-posts";
 
 const TextInput: FC = ({}) => {
+  const blogCtx = useContext(blogContext);
   const form = useForm({ mode: "all" });
   const { register, handleSubmit, formState } = form;
 
@@ -26,7 +28,8 @@ const TextInput: FC = ({}) => {
       options: { color: data.color, textAlignment: data.textAlignment },
     };
 
-    console.log(HeaderPost);
+    blogCtx.addPost(HeaderPost);
+    console.log(blogCtx.postArray);
   }
   return (
     <form className={classes.container} onSubmit={handleSubmit(onSubmit)}>

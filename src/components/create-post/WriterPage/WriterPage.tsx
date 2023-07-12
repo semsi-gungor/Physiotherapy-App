@@ -1,6 +1,8 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useContext } from "react";
+import { blogContext } from "@/context/blogContext";
+import BlogContextProvider from "@/context/blogContext";
 import classes from "./WriterPage.module.css";
 import InputMenu from "./InputMenu";
 import Modal from "../Modal/Modal";
@@ -15,6 +17,8 @@ import Preview from "./Preview";
 type InputType = "text" | "list" | "quote" | "header" | "image";
 
 const WriterPage: FC = ({}) => {
+  const blogCtx = useContext(blogContext);
+
   const [type, setType] = useState<InputType>("header");
 
   function changeType(payload: InputType) {
@@ -22,18 +26,20 @@ const WriterPage: FC = ({}) => {
   }
 
   return (
-    <div className={classes.container}>
-      <Preview />
-      <Button size="md">Gönder</Button>
-      <InputMenu onChange={changeType} />
-      <Modal>
-        {type === "header" && <HeaderInput />}
-        {type === "text" && <TextInput />}
-        {type === "list" && <ListInput />}
-        {type === "quote" && <QuoteInput />}
-        {type === "image" && <ImageInput />}
-      </Modal>
-    </div>
+    <BlogContextProvider>
+      <div className={classes.container}>
+        <Preview />
+        <Button size="md">Gönder</Button>
+        <InputMenu onChange={changeType} />
+        <Modal>
+          {type === "header" && <HeaderInput />}
+          {type === "text" && <TextInput />}
+          {type === "list" && <ListInput />}
+          {type === "quote" && <QuoteInput />}
+          {type === "image" && <ImageInput />}
+        </Modal>
+      </div>
+    </BlogContextProvider>
   );
 };
 
