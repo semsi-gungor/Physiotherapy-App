@@ -7,7 +7,26 @@ interface ListPostProps {
 }
 
 const ListPost: FC<ListPostProps> = ({ post }) => {
-  return <div className={classes.container}></div>;
+  const content = [post.postContent];
+  const listType = post.options?.listType;
+
+  if (listType === "ol") {
+    return (
+      <ol className={classes.list}>
+        {content.map((item) => {
+          return <li className={classes.item}>{item}</li>;
+        })}
+      </ol>
+    );
+  }
+
+  return (
+    <ul className={classes.list}>
+      {content.map((item) => {
+        return <li className={classes.item}>{item}</li>;
+      })}
+    </ul>
+  );
 };
 
 export default ListPost;
