@@ -1,10 +1,20 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useContext } from "react";
+import { blogContext } from "@/context/blogContext";
+import BlogRender from "@/components/blog/BlogRender/BlogRender";
 import classes from "./Preview.module.css";
 
-interface PreviewProps {}
+const Preview: FC = ({}) => {
+  const blogCtx = useContext(blogContext);
 
-const Preview: FC<PreviewProps> = ({}) => {
-  return <div className={classes.container}></div>;
+  return (
+    <div className={classes.container}>
+      {blogCtx.postArray.map((post, index) => {
+        return <BlogRender key={index} post={post} />;
+      })}
+    </div>
+  );
 };
 
 export default Preview;
