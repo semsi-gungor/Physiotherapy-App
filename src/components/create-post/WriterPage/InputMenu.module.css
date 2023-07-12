@@ -1,3 +1,9 @@
+.menu {
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
+}
+
 .menuButton {
   width: 2.5rem;
   height: 2.5rem;

@@ -3,30 +3,45 @@ import { createContext, useReducer } from "react";
 
 interface UiContext {
   isSideMenuShow: boolean;
+  isInputModalShow: boolean;
   displaySideMenu: () => void;
   hideSideMenu: () => void;
+  displayInputModal: () => void;
+  hideInputModal: () => void;
 }
 
 export const uiContext = createContext<UiContext>({
   isSideMenuShow: false,
+  isInputModalShow: false,
   displaySideMenu: () => {},
   hideSideMenu: () => {},
+  displayInputModal: () => {},
+  hideInputModal: () => {},
 });
 
 interface State {
   isSideMenuShow: boolean;
+  isInputModalShow: boolean;
 }
 
 interface Action {
-  type: "display-menu" | "hide-menu";
+  type:
+    | "display-menu"
+    | "hide-menu"
+    | "display-input-modal"
+    | "hide-input-modal";
 }
 
 function reducer(state: State, action: Action) {
   switch (action.type) {
     case "display-menu":
-      return { isSideMenuShow: true };
+      return { ...state, isSideMenuShow: true };
     case "hide-menu":
-      return { isSideMenuShow: false };
+      return { ...state, isSideMenuShow: false };
+    case "display-input-modal":
+      return { ...state, isInputModalShow: true };
+    case "hide-input-modal":
+      return { ...state, isInputModalShow: false };
     default:
       return state;
   }
@@ -34,6 +49,7 @@ function reducer(state: State, action: Action) {
 
 const initialState = {
   isSideMenuShow: false,
+  isInputModalShow: false,
 };
 
 interface Props {
@@ -51,10 +67,21 @@ export default function UIContextProvier({ children }: Props) {
     dispatch({ type: "hide-menu" });
   }
 
+  function displayInputModalHandler() {
+    dispatch({ type: "display-input-modal" });
+  }
+
+  function hideInputModalHandler() {
+    dispatch({ type: "hide-input-modal" });
+  }
+
   const value = {
     isSideMenuShow: state.isSideMenuShow,
+    isInputModalShow: state.isInputModalShow,
     displaySideMenu: displayMenuHandler,
     hideSideMenu: hideMenuHandler,
+    displayInputModal: displayInputModalHandler,
+    hideInputModal: hideInputModalHandler,
   };
 
   return <uiContext.Provider value={value}>{children}</uiContext.Provider>;
