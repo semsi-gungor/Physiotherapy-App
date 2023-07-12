@@ -12,7 +12,17 @@ interface BlogRenderProps {
 }
 
 const BlogRender: FC<BlogRenderProps> = ({ post }) => {
-  return <div className={classes.container}></div>;
+  const postType = post.postType;
+
+  return (
+    <div className={classes.container}>
+      {postType === "header" && <HeaderPost post={post} />}
+      {postType === "text" && <TextPost post={post} />}
+      {postType === "image" && <ImagePost post={post} />}
+      {postType === "list" && <ListPost post={post} />}
+      {postType === "quote" && <QuotePost post={post} />}
+    </div>
+  );
 };
 
 export default BlogRender;
