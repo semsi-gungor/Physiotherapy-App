@@ -7,7 +7,23 @@ interface TextPostProps {
 }
 
 const TextPost: FC<TextPostProps> = ({ post }) => {
-  return <div className={classes.container}></div>;
+  const content = post.postContent;
+  const color = post.options?.color;
+  const align = post.options?.textAlignment;
+
+  let textAlign = classes.left;
+
+  if (align === "center") {
+    textAlign = classes.center;
+  } else if (align === "right") {
+    textAlign = classes.right;
+  }
+
+  return (
+    <p className={`${classes.text} ${textAlign}`} style={{ color: `${color}` }}>
+      {content}
+    </p>
+  );
 };
 
 export default TextPost;

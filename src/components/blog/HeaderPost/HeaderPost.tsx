@@ -21,7 +21,7 @@ const HeaderPost: FC<HeaderPostProps> = ({ post }) => {
 
   return (
     <h1
-      className={classes.header}
+      className={`${fontSize}`}
       style={{ color: `${color}`, fontSize: `${fontSize}` }}
     >
       {content}
