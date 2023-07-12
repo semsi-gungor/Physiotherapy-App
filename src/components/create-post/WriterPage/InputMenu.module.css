@@ -1,0 +1,36 @@
+.menuButton {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-4);
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.listItem {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: 300ms;
+  outline: none;
+  border-radius: 10px;
+  color: var(--color-6);
+}
+
+.listItem:hover,
+.listItem:focus {
+  background-color: #44576d38;
+}
