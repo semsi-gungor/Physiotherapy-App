@@ -3,6 +3,7 @@ import classes from "./ServicePage.module.css";
 import { findService } from "@/dummy-api/services";
 import ServiceHeader from "./ServiceHeader/ServiceHeader";
 import ServiceBody from "./ServiceBody/ServiceBody";
+import FormSection from "../FormSection";
 
 interface ServicePageProps {
   serviceId: string;
@@ -21,6 +22,7 @@ const ServicePage: FC<ServicePageProps> = ({ serviceId }) => {
         treatments={treatments}
         title={title}
       />
+      <FormSection />
     </div>
   );
 };
