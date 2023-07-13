@@ -1,0 +1,17 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--color-c);
+}
+.item p {
+  font-size: 1.2rem;
+  color: var(--color-6);
+}
