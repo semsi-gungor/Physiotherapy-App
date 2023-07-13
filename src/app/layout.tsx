@@ -25,12 +25,12 @@ export default function RootLayout({
         className={newFont.className}
         style={{ position: "relative", backgroundColor: "var(--color-1)" }}
       >
-        {/* <UIContextProvier>
+        <UIContextProvier>
           <Navbar />
-        </UIContextProvier> */}
+        </UIContextProvier>
         {children}
-        {/* <Footer />
-        <ScrollToTop /> */}
+        <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
