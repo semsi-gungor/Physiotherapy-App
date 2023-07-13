@@ -1,12 +1,12 @@
 import { FC } from "react";
-import Wrapper from "@/components/ui/single-page-wrapper/Wrapper";
+import ServicePage from "@/components/services/ServicePage/ServicePage";
 
 type PageProps = {
   params: { serviceId: string };
 };
 
 const Page: FC<PageProps> = ({ params }) => {
-  return <Wrapper>{params.serviceId}</Wrapper>;
+  return <ServicePage serviceId={params.serviceId} />;
 };
 
 export default Page;
