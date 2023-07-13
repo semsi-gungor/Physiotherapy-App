@@ -1,7 +1,7 @@
 import { FC } from "react";
 import classes from "./ServiceHeader.module.css";
 import Image, { StaticImageData } from "next/image";
-import head from "../../../../public/grag-5.png";
+import head from "../../../../../public/grag-5.png";
 import Wrapper from "@/components/ui/single-page-wrapper/Wrapper";
 
 interface ServiceHeaderProps {
@@ -25,19 +25,22 @@ const ServiceHeader: FC<ServiceHeaderProps> = ({ img, title }) => {
           }}
           quality={100}
         />
-        <Image
-          src={head}
-          alt="background"
-          style={{
-            width: "105%",
-            height: "100%",
-            objectFit: "cover",
-            position: "absolute",
-            zIndex: "-1",
-          }}
-          quality={100}
-        />
-        <div className={classes.header}></div>
+
+        <div className={classes.header}>
+          <Image
+            src={head}
+            alt="background"
+            style={{
+              width: "105%",
+              height: "100%",
+              objectFit: "cover",
+              position: "absolute",
+              zIndex: "-1",
+            }}
+            quality={100}
+          />
+          <h1>{title}</h1>
+        </div>
       </div>
     </Wrapper>
   );
