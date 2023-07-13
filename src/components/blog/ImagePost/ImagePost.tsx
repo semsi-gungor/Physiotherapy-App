@@ -7,7 +7,29 @@ interface ImagePostProps {
 }
 
 const ImagePost: FC<ImagePostProps> = ({ post }) => {
-  return <div className={classes.container}></div>;
+  const url = post.postContent[0];
+  const content = post.postContent[1];
+
+  console.log(url);
+
+  const size = post.options?.size;
+
+  let imageSize = classes.sm;
+
+  if (size === "lg") {
+    imageSize = classes.lg;
+  } else if (size === "md") {
+    imageSize = classes.md;
+  }
+
+  return (
+    <div className={classes.container}>
+      <div className={`${imageSize}`}>
+        <img src={url} alt={content} />
+      </div>
+      <p className={classes.content}>{content}</p>
+    </div>
+  );
 };
 
 export default ImagePost;

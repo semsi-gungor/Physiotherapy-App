@@ -29,7 +29,10 @@ const WriterPage: FC = ({}) => {
     <BlogContextProvider>
       <div className={classes.container}>
         <Preview />
-        <Button size="md">Gönder</Button>
+        <div className={classes.button}>
+          <Button size="md">Gönder</Button>
+        </div>
+
         <InputMenu onChange={changeType} />
         <Modal>
           {type === "header" && <HeaderInput />}

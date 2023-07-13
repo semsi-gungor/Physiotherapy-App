@@ -6,3 +6,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.button {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.5rem;
+}
