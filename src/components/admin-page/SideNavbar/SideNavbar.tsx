@@ -21,31 +21,31 @@ const SideNavbar: FC<SideNavbarProps> = ({}) => {
       <ul className={classes.navlist}>
         <NavLink
           icon={AiFillHome}
-          link="/"
+          link="/admin-dashboard"
           title={"Ana Sayfa"}
           active={path === "/admin-dashboard"}
         />
         <NavLink
           icon={BsPersonLinesFill}
-          link="/"
+          link="/admin-dashboard/uyeler"
           title={"Üyeler"}
           active={path === "/admin-dashboard/uyeler"}
         />
         <NavLink
           icon={BsCalendar2WeekFill}
-          link="/"
+          link="/admin-dashboard/randevular"
           title={"Randevular"}
           active={path === "/admin-dashboard/randevular"}
         />
         <NavLink
           icon={BsFillChatLeftQuoteFill}
-          link="/"
+          link="/admin-dashboard/blog"
           title={"Blog"}
           active={path === "/admin-dashboard/blog"}
         />
         <NavLink
           icon={BsFillGearFill}
-          link="/"
+          link="/admin-dashboard/hizmetler"
           title={"Hizmetler"}
           active={path === "/admin-dashboard/hizmetler"}
         />
