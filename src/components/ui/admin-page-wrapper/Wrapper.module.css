@@ -1,0 +1,7 @@
+.wrapper {
+  height: 100vh;
+  width: calc(100% - var(--admin-nav-width));
+  margin-left: var(--admin-nav-width);
+  position: relative;
+  background-color: var(--color-1);
+}

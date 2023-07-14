@@ -3,13 +3,14 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 5.5rem;
-  background-color: rgba(182, 182, 182, 0.136);
+  width: 4.5rem;
+  background-color: var(--color-white);
   z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .navlist {

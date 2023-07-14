@@ -1,8 +1,9 @@
 import { FC } from "react";
 import classes from "./MainPage.module.css";
+import Wrapper from "@/components/ui/admin-page-wrapper/Wrapper";
 
 const MainPage: FC = () => {
-  return <div className={classes.container}></div>;
+  return <Wrapper>admin</Wrapper>;
 };
 
 export default MainPage;
