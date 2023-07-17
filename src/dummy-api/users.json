@@ -98,5 +98,105 @@
     "fullName": "Adam Smith",
     "role": "user",
     "pastAppointments": []
+  },
+  {
+    "userId": "u11",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u12",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u13",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u14",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u15",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u16",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u17",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u18",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u19",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
+  },
+  {
+    "userId": "u20",
+    "email": "example@test.com",
+    "pwd": "123",
+    "dateOfBirth": "02.05.1995",
+    "tel": "0546465465",
+    "fullName": "Adam Smith",
+    "role": "user",
+    "pastAppointments": []
   }
 ]
