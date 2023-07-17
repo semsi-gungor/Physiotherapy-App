@@ -22,6 +22,7 @@ const ImageInput: FC<ImageInputProps> = ({}) => {
 
   function onSubmit(data: FieldValues) {
     let HeaderPost: BlogPart = {
+      postId: Date.now().toString(),
       postType: "image",
       postContent: [data.url, data.title],
       options: { size: data.size },

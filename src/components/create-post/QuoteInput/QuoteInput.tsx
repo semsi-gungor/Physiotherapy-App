@@ -23,6 +23,7 @@ const QuoteInput: FC = ({}) => {
 
   function onSubmit(data: FieldValues) {
     let HeaderPost: BlogPart = {
+      postId: Date.now().toString(),
       postType: "quote",
       postContent: data.text,
       options: { color: data.color, textAlignment: data.textAlignment },

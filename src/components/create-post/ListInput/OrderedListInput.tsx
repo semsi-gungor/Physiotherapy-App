@@ -43,6 +43,7 @@ const ListInput: FC<ListInputProps> = ({}) => {
     let array = Object.values(rest);
 
     let HeaderPost: BlogPart = {
+      postId: Date.now().toString(),
       postType: "list",
       postContent: array,
       options: { listType: data.listStyle },

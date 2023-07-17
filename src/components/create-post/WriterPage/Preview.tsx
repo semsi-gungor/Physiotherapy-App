@@ -5,13 +5,19 @@ import { blogContext } from "@/context/blogContext";
 import BlogRender from "@/components/blog/BlogRender/BlogRender";
 import classes from "./Preview.module.css";
 
-const Preview: FC = ({}) => {
+type InputType = "text" | "list" | "quote" | "header" | "image";
+
+type PreviewProps = {
+  setType: (type: InputType) => void;
+};
+
+const Preview: FC<PreviewProps> = ({ setType }) => {
   const blogCtx = useContext(blogContext);
 
   return (
     <div className={classes.container}>
-      {blogCtx.postArray.map((post, index) => {
-        return <BlogRender key={index} post={post} />;
+      {blogCtx.postArray.map((post) => {
+        return <BlogRender key={post.postId} post={post} setType={setType} />;
       })}
     </div>
   );

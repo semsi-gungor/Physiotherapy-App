@@ -8,6 +8,7 @@ type Props = {
   type: string;
   name: string;
   label: string;
+  initialValue: string | string[];
   register: UseFormRegister<FieldValues>;
   required?: string;
   errorMessage?: string;
@@ -28,6 +29,7 @@ export default function Input({
   register,
   validate,
   required,
+  initialValue,
 }: Props) {
   const inputRegister = register(name, {
     required: { value: true, message: `${label} boş bırakılamaz.` },
@@ -35,6 +37,7 @@ export default function Input({
     validate: validate,
     max: max,
     min: min,
+    value: initialValue,
   });
 
   return (

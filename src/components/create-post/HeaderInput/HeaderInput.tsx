@@ -13,7 +13,11 @@ import ToolBarSection from "../ToolBar/ToolBarSection";
 import ToolBarDivider from "../ToolBar/ToolBarDivider";
 import { BlogPart } from "@/types/blog-posts";
 
-const HeaderInput: FC = ({}) => {
+type HeaderInputProps = {
+  editInfo: BlogPart;
+};
+
+const HeaderInput: FC = () => {
   const blogCtx = useContext(blogContext);
 
   const form = useForm({ mode: "all" });
@@ -22,14 +26,19 @@ const HeaderInput: FC = ({}) => {
   const { errors } = formState;
 
   function onSubmit(data: FieldValues) {
-    let HeaderPost: BlogPart = {
-      postType: "header",
-      postContent: data.header,
-      options: { color: data.color, size: data.size },
-    };
+    if (blogCtx.postingType === "add") {
+      let HeaderPost: BlogPart = {
+        postId: Date.now().toString(),
+        postType: "header",
+        postContent: data.header,
+        options: { color: data.color, size: data.size },
+      };
 
-    blogCtx.addPost(HeaderPost);
-    console.log(blogCtx.postArray);
+      blogCtx.addPost(HeaderPost);
+    } else if (blogCtx.postingType === "edit") {
+      let HeaderPost: BlogPart = blogCtx.placeholder;
+      blogCtx.editPost("1", HeaderPost);
+    }
   }
 
   return (
@@ -63,13 +72,26 @@ const HeaderInput: FC = ({}) => {
           />
         </ToolBarSection>
       </ToolBar>
-      <Input
-        name="header"
-        register={register}
-        type="text"
-        label="Başlık"
-        errorMessage={errors.header?.message?.toString()}
-      />
+      {blogCtx.postingType === "add" && (
+        <Input
+          name="header"
+          register={register}
+          type="text"
+          label="Başlık"
+          errorMessage={errors.header?.message?.toString()}
+          initialValue=""
+        />
+      )}
+      {blogCtx.postingType === "edit" && (
+        <Input
+          name="header"
+          register={register}
+          type="text"
+          label="Başlık"
+          errorMessage={errors.header?.message?.toString()}
+          initialValue={blogCtx.placeholder.postContent}
+        />
+      )}
       <Button size="md">Ekle</Button>
     </form>
   );

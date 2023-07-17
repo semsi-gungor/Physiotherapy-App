@@ -23,13 +23,13 @@ const TextInput: FC = ({}) => {
 
   function onSubmit(data: FieldValues) {
     let HeaderPost: BlogPart = {
+      postId: Date.now().toString(),
       postType: "text",
       postContent: data.text,
       options: { color: data.color, textAlignment: data.textAlignment },
     };
 
     blogCtx.addPost(HeaderPost);
-    console.log(blogCtx.postArray);
   }
   return (
     <form className={classes.container} onSubmit={handleSubmit(onSubmit)}>

@@ -13,6 +13,7 @@ import ListInput from "../ListInput/OrderedListInput";
 import ImageInput from "../ImageInput/ImageInput";
 import Button from "@/components/ui/button/Button";
 import Preview from "./Preview";
+import { BlogPart } from "@/types/blog-posts";
 
 type InputType = "text" | "list" | "quote" | "header" | "image";
 
@@ -28,7 +29,7 @@ const WriterPage: FC = ({}) => {
   return (
     <BlogContextProvider>
       <div className={classes.container}>
-        <Preview />
+        <Preview setType={changeType} />
         <div className={classes.button}>
           <Button size="md">Gönder</Button>
         </div>

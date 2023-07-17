@@ -2,6 +2,7 @@
 
 import { FC, useState, useContext } from "react";
 import { uiContext } from "@/context/uiControl";
+import { blogContext } from "@/context/blogContext";
 import classes from "./InputMenu.module.css";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { AiOutlinePlus } from "react-icons/ai";
@@ -22,6 +23,7 @@ type InputMenuProps = {
 
 const InputMenu: FC<InputMenuProps> = ({ onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const blogCtx = useContext(blogContext);
   const uiCtx = useContext(uiContext);
 
   return (
@@ -51,6 +53,7 @@ const InputMenu: FC<InputMenuProps> = ({ onChange }) => {
                       className={classes.listItem}
                       onClick={() => {
                         onChange("header");
+                        blogCtx.setPostingType("add");
                         uiCtx.displayInputModal();
                       }}
                     >
@@ -62,6 +65,7 @@ const InputMenu: FC<InputMenuProps> = ({ onChange }) => {
                       className={classes.listItem}
                       onClick={() => {
                         onChange("text");
+                        blogCtx.setPostingType("add");
                         uiCtx.displayInputModal();
                       }}
                     >
@@ -73,6 +77,7 @@ const InputMenu: FC<InputMenuProps> = ({ onChange }) => {
                       className={classes.listItem}
                       onClick={() => {
                         onChange("list");
+                        blogCtx.setPostingType("add");
                         uiCtx.displayInputModal();
                       }}
                     >
@@ -84,6 +89,7 @@ const InputMenu: FC<InputMenuProps> = ({ onChange }) => {
                       className={classes.listItem}
                       onClick={() => {
                         onChange("quote");
+                        blogCtx.setPostingType("add");
                         uiCtx.displayInputModal();
                       }}
                     >
@@ -95,6 +101,7 @@ const InputMenu: FC<InputMenuProps> = ({ onChange }) => {
                       className={classes.listItem}
                       onClick={() => {
                         onChange("image");
+                        blogCtx.setPostingType("add");
                         uiCtx.displayInputModal();
                       }}
                     >

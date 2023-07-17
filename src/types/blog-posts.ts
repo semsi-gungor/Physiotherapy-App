@@ -1,5 +1,6 @@
 export type BlogPart = {
-  postType: "header" | "text" | "list" | "quote" | "image" | "divider";
+  postType: "header" | "text" | "list" | "quote" | "image";
+  postId: string;
   postContent: string | string[];
   options?: {
     size?: "sm" | "md" | "lg";
