@@ -1,0 +1,44 @@
+.container {
+  border-radius: 10px;
+  background-color: var(--color-white);
+}
+
+.table {
+  border-collapse: collapse;
+  position: relative;
+  width: 100%;
+}
+
+.table td,
+.table th {
+  padding: 1rem;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.tableHeader {
+  border-bottom: 1px solid rgb(150, 150, 149);
+  background-color: var(--color-5);
+  color: var(--color-1);
+  position: sticky;
+  top: 0;
+}
+
+.row {
+  border-bottom: 1px solid rgba(150, 150, 149, 0.6);
+}
+
+.light {
+  background-color: #dfebf690;
+}
+
+.dark {
+  background-color: var(--color-2);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
