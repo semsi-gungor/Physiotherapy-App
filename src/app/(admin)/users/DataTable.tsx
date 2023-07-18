@@ -48,11 +48,23 @@ export function DataTable<TData, TValue>({
 
   return (
     <TableLayout
-      nextPage={table.nextPage}
+      nextPage={() => {
+        if (table.getCanNextPage()) {
+          table.nextPage();
+        } else {
+          return;
+        }
+      }}
       prevPage={table.previousPage}
       caption="Users"
       currentPage={table.getState().pagination.pageIndex + 1}
       pageCount={table.getPageCount()}
+      lastPage={() => {
+        table.setPageIndex(table.getPageCount() - 1);
+      }}
+      firstPage={() => {
+        table.setPageIndex(0);
+      }}
     >
       <div className={classes.container}>
         <Table className={classes.table}>

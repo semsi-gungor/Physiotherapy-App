@@ -17,6 +17,8 @@ interface TableLayoutProps {
   currentPage: number;
   nextPage: () => void;
   prevPage: () => void;
+  firstPage: () => void;
+  lastPage: () => void;
 }
 
 const TableLayout: FC<TableLayoutProps> = ({
@@ -26,6 +28,8 @@ const TableLayout: FC<TableLayoutProps> = ({
   currentPage,
   nextPage,
   prevPage,
+  firstPage,
+  lastPage,
 }) => {
   return (
     <div className={classes.container}>
@@ -35,7 +39,7 @@ const TableLayout: FC<TableLayoutProps> = ({
       <div className={classes.table}>{children}</div>
       <div className={classes.controls}>
         <div className={classes.buttons}>
-          <span>
+          <span onClick={firstPage}>
             <BsChevronDoubleLeft />
           </span>
           <span onClick={prevPage}>
@@ -44,7 +48,7 @@ const TableLayout: FC<TableLayoutProps> = ({
           <span onClick={nextPage}>
             <BsChevronRight />
           </span>
-          <span>
+          <span onClick={lastPage}>
             <BsChevronDoubleRight />
           </span>
         </div>

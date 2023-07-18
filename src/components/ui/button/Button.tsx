@@ -2,7 +2,7 @@ import { FC } from "react";
 import classes from "./Button.module.css";
 
 interface ButtonProps {
-  variant?: "primary" | "outlined";
+  variant?: "primary" | "outlined" | "ghost";
   size?: "sm" | "md" | "lg" | "full" | "half" | "thquarters";
   children: React.ReactNode;
   onClick?: () => void;
@@ -13,6 +13,8 @@ const Button: FC<ButtonProps> = ({ children, variant, size }) => {
 
   if (variant === "outlined") {
     classNames += ` ${classes.outlined}`;
+  } else if (variant === "ghost") {
+    classNames += ` ${classes.ghost}`;
   } else {
     classNames += ` ${classes.primary}`;
   }

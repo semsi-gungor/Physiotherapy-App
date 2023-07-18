@@ -1,7 +1,9 @@
 "use client";
 
-import Button from "@/components/ui/button/Button";
 import { ColumnDef } from "@tanstack/react-table";
+import { LuArrowUpDown } from "react-icons/lu";
+import classes from "./DataTable.module.css";
+import RowAction from "@/components/data-tables/RowAction/RowAction";
 
 export type User = {
   userId: string;
@@ -21,16 +23,23 @@ export const columns: ColumnDef<User>[] = [
     header: ({ column }) => {
       return (
         <div
+          className={classes.sortButton}
           onClick={() => {
             column.toggleSorting(column.getIsSorted() === "asc");
-            console.log("sad");
           }}
         >
-          NAME
+          <span>NAME</span>
+          <LuArrowUpDown />
         </div>
       );
     },
   },
   { accessorKey: "role", header: "ROLE" },
   { accessorKey: "tel", header: "TELNO" },
+  {
+    id: "actions",
+    cell: ({ row }) => {
+      return <RowAction />;
+    },
+  },
 ];

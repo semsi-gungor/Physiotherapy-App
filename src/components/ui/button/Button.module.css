@@ -33,6 +33,17 @@
   background-color: var(--color-6);
 }
 
+.ghost {
+  color: var(--color-6);
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+.ghost:hover {
+  background-color: rgba(135, 135, 135, 0.107);
+}
+
 .md {
   width: 7rem;
   height: 3rem;

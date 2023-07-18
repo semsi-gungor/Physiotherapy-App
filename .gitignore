@@ -34,5 +34,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# dummy api
 /dummy-api
 src/dummy-api/services.ts
+src/dummy-api/users.json
+src/dummy-api/users.json
+src/dummy-api/users.json
