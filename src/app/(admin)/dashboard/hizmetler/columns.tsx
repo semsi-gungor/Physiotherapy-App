@@ -2,7 +2,7 @@
 
 import { ColumnDef } from "@tanstack/react-table";
 import { LuArrowUpDown } from "react-icons/lu";
-import classes from "./DataTable.module.css";
+import classes from "./column.module.css";
 import RowAction from "@/components/data-tables/RowAction/RowAction";
 
 export type User = {

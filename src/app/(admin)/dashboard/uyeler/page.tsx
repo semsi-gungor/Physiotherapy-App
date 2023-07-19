@@ -5,9 +5,8 @@ import { adminContext } from "@/context/adminContext";
 import AdminContextProvier from "@/context/adminContext";
 import { columns } from "./columns";
 import { DataTable } from "./DataTable";
-import Users from "../../../dummy-api/users.json";
+import Users from "../../../../dummy-api/users.json";
 import DashboardWrapper from "@/components/admin-page/DashboardWrapper/DashboardWrapper";
-import DashboardModal from "@/components/admin-page/DashboardModal/DashboardModal";
 
 interface pageProps {}
 

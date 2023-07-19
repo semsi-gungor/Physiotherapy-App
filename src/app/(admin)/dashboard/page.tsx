@@ -1,15 +1,9 @@
-"use client";
-
 import { FC } from "react";
-import Modal from "@/components/create-post/Modal/Modal";
+import Wrapper from "@/components/ui/single-page-wrapper/Wrapper";
+import MainPage from "@/components/admin-page/MainPage/MainPage";
 
-const page: FC = ({}) => {
-  return (
-    <>
-      <div></div>
-      <Modal>asd</Modal>
-    </>
-  );
+const Page: FC = () => {
+  return <MainPage />;
 };
 
-export default page;
+export default Page;

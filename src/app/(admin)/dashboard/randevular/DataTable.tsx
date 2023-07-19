@@ -4,7 +4,6 @@ import classes from "./DataTable.module.css";
 import TableLayout from "@/components/data-tables/TableLayout";
 import { LuSearch } from "react-icons/lu";
 import * as Popover from "@radix-ui/react-popover";
-import Button from "@/components/ui/button/Button";
 
 import {
   Column,
@@ -59,6 +58,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <TableLayout
+      caption="Randevular"
       setPageSize={table.setPageSize}
       nextPage={() => {
         if (table.getCanNextPage()) {
@@ -68,7 +68,6 @@ export function DataTable<TData, TValue>({
         }
       }}
       prevPage={table.previousPage}
-      caption="Users"
       currentPage={table.getState().pagination.pageIndex + 1}
       pageCount={table.getPageCount()}
       lastPage={() => {
