@@ -17,7 +17,10 @@ export type User = {
 export const columns: ColumnDef<User>[] = [
   { accessorKey: "userId", header: "ID" },
   { accessorKey: "dateOfBirth", header: "DOB" },
-  { accessorKey: "email", header: "EMAIL" },
+  {
+    accessorKey: "email",
+    header: "EMAIL",
+  },
   {
     accessorKey: "fullName",
     header: ({ column }) => {

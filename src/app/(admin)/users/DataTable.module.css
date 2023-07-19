@@ -26,6 +26,11 @@
 
 .row {
   border-bottom: 1px solid rgba(150, 150, 149, 0.6);
+  transition: 300ms;
+}
+
+.row:hover {
+  background-color: rgb(255, 248, 236);
 }
 
 .light {
@@ -65,4 +70,41 @@
 
 .sortButton:hover {
   background-color: rgba(255, 255, 255, 0.105);
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  transition: 300ms;
+}
+
+.icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search {
+  width: 15rem;
+  height: 3rem;
+  background-color: var(--color-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.search input {
+  width: 90%;
+  height: 50%;
+  padding: 0.2rem;
+  outline: none;
 }

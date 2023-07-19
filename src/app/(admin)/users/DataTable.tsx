@@ -2,8 +2,13 @@
 
 import classes from "./DataTable.module.css";
 import TableLayout from "@/components/data-tables/TableLayout";
+import { LuSearch } from "react-icons/lu";
+import * as Popover from "@radix-ui/react-popover";
+import Button from "@/components/ui/button/Button";
 
 import {
+  Column,
+  Table as ReactTable,
   ColumnDef,
   flexRender,
   getCoreRowModel,
@@ -11,6 +16,8 @@ import {
   useReactTable,
   getSortedRowModel,
   SortingState,
+  ColumnFiltersState,
+  getFilteredRowModel,
 } from "@tanstack/react-table";
 
 import {
@@ -21,7 +28,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -33,6 +40,7 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
   const table = useReactTable({
     data,
@@ -42,8 +50,11 @@ export function DataTable<TData, TValue>({
     getSortedRowModel: getSortedRowModel(),
     state: {
       sorting,
+      columnFilters,
     },
     onSortingChange: setSorting,
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
   });
 
   return (
@@ -73,16 +84,35 @@ export function DataTable<TData, TValue>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead
-                      key={header.id}
-                      onClick={header.column.getToggleSortingHandler}
-                    >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
+                    <TableHead key={header.id}>
+                      {header.isPlaceholder ? null : (
+                        <div className={classes.headerCell}>
+                          {flexRender(
                             header.column.columnDef.header,
                             header.getContext()
                           )}
+                          {header.column.getCanFilter() ? (
+                            <Popover.Root>
+                              <Popover.Trigger asChild>
+                                <span className={classes.icon}>
+                                  <LuSearch />
+                                </span>
+                              </Popover.Trigger>
+                              <Popover.Anchor />
+                              <Popover.Portal>
+                                <Popover.Content sideOffset={20} asChild>
+                                  <div className={classes.search}>
+                                    <Filter
+                                      column={header.column}
+                                      table={table}
+                                    />
+                                  </div>
+                                </Popover.Content>
+                              </Popover.Portal>
+                            </Popover.Root>
+                          ) : null}
+                        </div>
+                      )}
                     </TableHead>
                   );
                 })}
@@ -118,5 +148,56 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
     </TableLayout>
+  );
+}
+
+function Filter({
+  column,
+  table,
+}: {
+  column: Column<any, any>;
+  table: ReactTable<any>;
+}) {
+  const firstValue = table
+    .getPreFilteredRowModel()
+    .flatRows[0]?.getValue(column.id);
+
+  const columnFilterValue = column.getFilterValue();
+
+  return typeof firstValue === "number" ? (
+    <div className="flex space-x-2">
+      <input
+        type="number"
+        value={(columnFilterValue as [number, number])?.[0] ?? ""}
+        onChange={(e) =>
+          column.setFilterValue((old: [number, number]) => [
+            e.target.value,
+            old?.[1],
+          ])
+        }
+        placeholder={`Min`}
+        className="w-24 border shadow rounded"
+      />
+      <input
+        type="number"
+        value={(columnFilterValue as [number, number])?.[1] ?? ""}
+        onChange={(e) =>
+          column.setFilterValue((old: [number, number]) => [
+            old?.[0],
+            e.target.value,
+          ])
+        }
+        placeholder={`Max`}
+        className="w-24 border shadow rounded"
+      />
+    </div>
+  ) : (
+    <input
+      type="text"
+      value={(columnFilterValue ?? "") as string}
+      onChange={(e) => column.setFilterValue(e.target.value)}
+      placeholder={`Search...`}
+      className="w-36 border shadow rounded"
+    />
   );
 }
