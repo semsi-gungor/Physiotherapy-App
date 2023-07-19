@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useReducer } from "react";
+import { User } from "@/app/(admin)/users/columns";
 
 interface AdminContext {
   isInputModalShow: boolean;
