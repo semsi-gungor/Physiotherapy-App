@@ -21,6 +21,7 @@ export default function LoginPage() {
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <header>ÜYE GİRİŞİ</header>
         <Input
+          initialValue={""}
           name="email"
           register={register}
           type="email"
@@ -32,6 +33,7 @@ export default function LoginPage() {
           }}
         />
         <Input
+          initialValue={""}
           name="password"
           register={register}
           type="password"

@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { usePagination } from "@mantine/hooks";
+import { Table } from "@tanstack/react-table";
 import classes from "./TableLayout.module.css";
 import {
   BsChevronRight,
@@ -19,6 +19,8 @@ interface TableLayoutProps {
   prevPage: () => void;
   firstPage: () => void;
   lastPage: () => void;
+  setPageIndex: (updater: number) => void;
+  setPageSize: (updater: number) => void;
 }
 
 const TableLayout: FC<TableLayoutProps> = ({
@@ -30,6 +32,8 @@ const TableLayout: FC<TableLayoutProps> = ({
   prevPage,
   firstPage,
   lastPage,
+  setPageIndex,
+  setPageSize,
 }) => {
   return (
     <div className={classes.container}>
@@ -54,6 +58,33 @@ const TableLayout: FC<TableLayoutProps> = ({
         </div>
         <div className={classes.pageInfo}>
           <p>{`${pageCount} içinden ${currentPage} sayfa.`}</p>
+        </div>
+        <div className={classes.goToPage}>
+          <p>Sayfaya git:</p>
+          <input
+            type="number"
+            defaultValue={1}
+            max={pageCount}
+            min={1}
+            onChange={(e) => {
+              const page = e.target.value ? Number(e.target.value) - 1 : 0;
+              setPageIndex(page);
+            }}
+          />
+        </div>
+        <div className={classes.pageSize}>
+          <p>Sayfa büyüklüğü:</p>
+          <select
+            onChange={(e) => {
+              setPageSize(Number(e.target.value));
+            }}
+          >
+            {[10, 20, 30, 40, 50].map((pageSize) => (
+              <option key={pageSize} value={pageSize}>
+                {pageSize}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
     </div>
