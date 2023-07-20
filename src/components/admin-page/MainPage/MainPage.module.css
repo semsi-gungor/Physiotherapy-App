@@ -1,5 +1,23 @@
 .container {
-  width: 100%;
-  min-height: 100vh;
+  width: calc(100% - var(--admin-nav-width));
+  height: 100vh;
+  margin-left: var(--admin-nav-width);
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1rem;
+}
+
+.div1 {
+  grid-area: 4 / 10 / 11 / 13;
+}
+.div2 {
+  grid-area: 4 / 7 / 11 / 10;
+}
+.div3 {
+  grid-area: 4 / 1 / 11 / 7;
+}
+.div4 {
+  grid-area: 1 / 1 / 4 / 13;
 }

@@ -1,9 +1,13 @@
 import { FC } from "react";
 import classes from "./MainPage.module.css";
-import Wrapper from "@/components/ui/admin-page-wrapper/Wrapper";
+import ChartContainer from "./ChartContainer/ChartContainer";
 
 const MainPage: FC = () => {
-  return <Wrapper>admin</Wrapper>;
+  return (
+    <div className={classes.container}>
+      <ChartContainer />
+    </div>
+  );
 };
 
 export default MainPage;
