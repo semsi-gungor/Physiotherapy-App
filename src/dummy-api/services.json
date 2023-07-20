@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Reformer Pilates",
+    "serviceId": "reformer-pilates",
+    "image": "balls",
+    "body": "Reformer pilates, diğer adıyla aletli pilates, özel tasarlanmış aletler ile yapılan, direnci ayarlanabilen, birçok şekilde modifiye edilerek gerçekleştirilebilen egzersiz türüdür.",
+    "definition": "Fizyoterapist tarafından uygulanan kişinin omurga sağlığını düzeltmek, kas iskelet sistemi ile ilgili hastalıklardan korumak ve iyile ştirmek amacıyla uygulanan ki şiye özel egzersizler bütünüdür.",
+    "treatments": [
+      "Bel Ağrısı ve Bel Fıtığı",
+      "Boyun Ağrısı ve Boyun Fıtığı",
+      "Boyun Düzleşmesi",
+      "Omuz Ağrısı",
+      "Duruş Bozuklukları (Kifoz,lordoz..)",
+      "Eklem Ağrıları",
+      "Ayak – Ayak Bileği Problemleri",
+      "Menisküs",
+      "Patellafemoral Ağrı Sendromu",
+      "Ön Çapraz Bağ Yaralanmaları",
+      "Ortopedik Hastalıkların Cerrahi Öncesi – Sonrası Rehabilitasyonu",
+      "Bazı Nörolojik Hastalıkların Rehabilitasyonunda Kuvvetlendirme Amaçlı"
+    ]
+  },
+  {
+    "title": "Hamile Pilatesi",
+    "serviceId": "hamile-pilatesi",
+    "image": "balls",
+    "body": "Gebelikte yapılan düzenli fiziksel aktivite ve egzersizin, fiziksel uygunluğu artırdığı ve devam ettirdiği, kilo kontrolüne yardımcı olduğu, obez kadınlarda gestasyonel diyabet riskini azalltığı ve psikososyal iyilik hissini artırdığı bildirilmiştir. Tıbbi ya da obstetrik bir komplikasyonu olmayan gebelerin haftanın her günü, 20-30 dakika arasında orta şiddette egzersiz yapmaları önerilmiştir.",
+    "definition": "Gebelikte, klinik pilates egzersizleri, fiziksel ve mental bir iyileşme sağlar. Diğer egzersiz eğitimlerinden farklı olarak, derin postüral kasları hedefler, kuvveti içerden dışarıya doğru artırır, core stabilizasyonunu geliştirir, vücudu yeniden dengeler ve düzgün postüral dizilim kazandırır.Gebelikte rutin egzersiz programına mutlaka fizyoterapist denetimli pelvik taban egzersizleri de eklenmelidir. Oksijenlenmeyi artırmak ve uterustan beyne giden ağrılı sinyallerin iletimini engellemek, doğum sırasında artan metabolik gereksinimlerin karşılanması ve kontraksiyonlarla başa çıkabilmek için kontrollü solunum egzersizlerinin de anneye öğretilmesi gerekmektedir.",
+    "treatments": []
+  },
+  {
+    "title": "Yogaterapi",
+    "serviceId": "yogaterapi",
+    "image": "balls",
+    "body": "Yoga terapi, zihinsel ve fiziksel sağlığı iyileştirmek için yoga duruşları, nefes egzersizleri, meditasyon ve özelleştirilmiş hareketleri kullanan bir terapi türüdür. Bedenin kendi içindeki şifa kaynaklarını harekete geçirir ve bedendeki çeşitli sistemlerin düzgün çalışmasına yardımcı olur.",
+    "definition": "Yoga terapi derslerine her yaştan kişi rahatlıkla katılabilir. Herhangi bir yoga deneyimine gerek yoktur. Bu derslerde, nefes alış verişlerle pozlara girip çıkarak, bazen poz içinde birkaç nefes kalarak, yumuşak akışlar yapılır.",
+    "treatments": [
+      "Endişe",
+      "Sırt Ağrısı",
+      "Romatizma",
+      "Eklem Ağrıları",
+      "Artrit",
+      "Hipertansiyon, Kalp Hastalıkları",
+      "Solunun Problemleri, Astım",
+      "Diabet",
+      "Multipl Skleroz",
+      "Kronik Yorgunluk, Migren",
+      "Fibromiyalji",
+      "Uykusuzluk, Depresyon, Stres"
+    ]
+  },
+  {
+    "title": "Manuel Terapi",
+    "serviceId": "manuel-terapi",
+    "image": "balls",
+    "body": "Manuel terapi herhangi bir makine yada materyal kullanılmadan tamamen elle yapılan bir terapi yöntemidir. Lavinis fizyoterapistleri olarak Mulligan Manuel Terapi tekniğini kullanmaktayız.",
+    "definition": "Manuel terapi herhangi bir makine yada materyal kullanılmadan tamamen elle yapılan bir terapi yöntemidir. Lavinis fizyoterapistleri olarak Mulligan Manuel Terapi tekniğini kullanmaktayız. Mulligan’ın diğer manuel terapi uygulamalarından farkı; uygulama yapılıp harekei aktif olarak kişinin yapması istenir bu sayede diğer manuel terapi uygulamalarından daha etkili bir yöntemdir. Seanslarımızda Mulligan’a ek olarak yumuşak dokuya yönelik graston, kupa, G terapi gibi yöntemleri de kullanarak kişinin iyileşme sürecini hızlandırmayı amaçlamaktayız.",
+    "treatments": [
+      "Bel ve boyun fıtığı",
+      "Eklem Ağrıları",
+      "Sinir sıkışması yaşanılan durumlar",
+      "Uyuşma, Karıncalanma",
+      "Eklem hareket kısıtlıkları"
+    ]
+  },
+  {
+    "title": "Pelvik Taban Rehabilitasyonu",
+    "serviceId": "pelvik-taban-rehabilitasyonu",
+    "image": "balls",
+    "body": "Pelvik taban rehabilitasyonu uzman hekim tarafından tanısı konmuş kişilere uygulanır. Merkezimize gelen kişi detaylı olarak değerlendirilir ve kişiye özel biraysel bir terapi programı oluşturulur. Program kişinin ilerleyişine göre sürekli revize edilir.",
+    "definition": "Pelvik taban kasları, pelvis dediğimiz kalça kemiğini alttan saran ve içerisinde bulunan idrar kesesine, bağırsaklara, kadınlarda rahime ve erkeklerde prostata destek olan hamak şeklinde bir yapıdır. Bu nedenle pelvik taban kaslarındaki herhangi bir bozukluk bu organların işlevini düzgün yapmasına engel olur. Pelvik taban rehabilitasyonuyla bu kasların fonksiyonu optimum seviyede olacak şekilde eğitilir ve bu alanda eğitimler almış fizyoterapistler tarafından uygulanır. Daha çok kadınlarda özellikle hamilelik, doğum, menopoz dönemlerinde pelvik taban kasları etkilenir. Erkeklerde ve çocuklarda da pelvik taban problemleri görülmektedir.",
+    "treatments": [
+      "İnkontinans (idrar veya dı şkı kaçırma)",
+      "Konstipasyon (Kabızlık)",
+      "Sık idrara gitme",
+      "Vezikoüretral reflü (İdrarın böbre ğe geri akışı)",
+      "Tekrarlı idrar yolu enfeksiyonu",
+      "Aşırı aktif mesane",
+      "Az aktif mesane",
+      "Nörojen mesane",
+      "İdrar/dışkı boşaltma güçlüğü",
+      "Kronik pelvik ağrı",
+      "Disparoni (Ağrılı cinsel ilişki)",
+      "Vajinismus"
+    ]
+  },
+  {
+    "title": "3 Boyutlu Skolyoz Egzersizleri",
+    "serviceId": "3-boyutlu-skolyoz-egzersizleri",
+    "image": "balls",
+    "body": "Skolyozu omurganın yana doğru eğilmesi şeklinde kısaca açıklayabiliriz. Normal ve sağlıklı omurgada, omurlar arkadan bakıldı ğında yukardan aşağıya yani boyun, sırt ve bel bölgelerinde düz bir hat şeklinde uzanır. Skolyozda ise omurlar sağa veya sola doğru yer değiştirir ve aynı zamanda kendi eksenleri etrafında döner. Bu nedenle skolyozu üç boyutlu bir deformite (şekil bozukluğu) olarak tanımlayabiliriz",
+    "definition": "Günümüzde skolyozun bilinen en geçerli tedavi yöntemidir. 3 boyutlu skolyoz egzersiz tedavisinin temel prensipleri rotasyonel solunum, pelvik düzeltme, core stabilizasyon, doğru pozisyonlama, germe uygulamalarıdır.",
+    "treatments": []
+  },
+  {
+    "title": "Kanser Sornaso Egzersiz Danışmanlığı",
+    "serviceId": "kanser-sonrasi-egzersiz",
+    "image": "balls",
+    "body": "Kanser rehabilitasyonu, kanserli kişilerin fiziksel ve duygusal sağlığını korumalarına ve geri kazanmalarına yardımcı olan bir programdır. Kanser rehabilitasyonu, kanser tedavisi öncesinde, sırasında ve sonrasında uygulanabilir.",
+    "definition": "Kanser rehabilitasyonu, tercihlerinizi, güçlü yönlerinizi ve hedeflerinizi dikkate alan kişisel bir rehabilitasyon planı geliştirmeyi amaçlar. Kanser rehabilitasyon programına katılmak, daha iyi veya daha hızlı bir iyileşmeyle hayat kalitenizin artırılmasına yardımcı olabilir.",
+    "treatments": [
+      "Dayanıklılığınızı, gücünüzü ve hareketliliğinizi geliştirmenize yardımcı olur.",
+      "Kendinize olan güveninizi ve öz saygınızı artırmanıza yardımcı olur.",
+      "Günlük yaşam aktivitelerini ve kendinize bakmayı kolaylaştırmanıza ardımcı olur.",
+      "Kaygı, sıkıntı veya diğer duygusal sorunlarla başa çıkmanıza yardımcı olur.",
+      "Yorgunluğu, ağrıyı ve diğer kalıcı yan etkilerin azaltılmasında etkilidir."
+    ]
+  },
+  {
+    "title": "Dans ve Zumba",
+    "serviceId": "dans-zumba",
+    "image": "balls",
+    "body": "Müziğin ritmiyle dans ederek kilo vermek dendiğinde akla gelen aktivitelerin başında kuşkusuz ki zumba vardır. Ortaya çıktığı günden bu yana egzersiz anlamında büyük farklılık yaratan ve çok sayıda insanı etkisine alan zumba, dansa dayalı bir fitness programıdır. Lavinis bünyesinde bulunan Zumba ve Zumba Grup Egzersizleri sizlere doğru ve etkili bir şekilde sunar.",
+    "definition": "İlk kez Kolombiyalı dansçı ve koreograf Alberto Beto Perez tarafından 1990 sonrası yıllarda oluşturulan zumbanın, dünyadaki en yaygın dans ve fitness bileşimi programı olarak ün kazandığı bilinir. Zumba fitnessın kendine has doğasını oluşturan temel niteliği, onun başta Latin olmak üzere, uluslararası müziklerle dansı bir araya getirmesidir. Eğlenceyle harmanlanmış aerobik bir aktivite olarak, genellikle kumbiya, samba, salsa, mambo, merenge ve hip-hop gibi çeşitli danslarla ve müziklerle yapılır.Zumba, bireysel olarak gerçekleştirilebileceği gibi, daha çok fitness ve spor merkezlerinde grup egzersizleri şeklinde tercih edilmektedir. Bu durumun önde gelen nedenlerinden biri, insanların, egzersizlerini alanında uzman eğitmenler eşliğinde, doğru ve etkili hareketlerle yapmak istemesidir. Bir başka neden ise, grup egzersizleriyle konsantrasyonun görece daha kolay sağlanabilmesidir. Nitekim, zumba dansı da popülaritesini bir grup egzersizi olmasından alır.",
+    "treatments": []
+  }
+]

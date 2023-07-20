@@ -10,12 +10,14 @@ interface TextareaInputProps {
   label: string;
   errorMessage?: string;
   register: UseFormRegister<FieldValues>;
+  initialValue: string;
 }
 
 const TextareaInput: FC<TextareaInputProps> = ({
   name,
   label,
   errorMessage,
+  initialValue,
   register,
 }) => {
   const inputRegister = register(name, {
@@ -23,6 +25,7 @@ const TextareaInput: FC<TextareaInputProps> = ({
       value: true,
       message: `${label} eklenmeden önce içeriği doldurulmalı.`,
     },
+    value: initialValue,
   });
 
   return (

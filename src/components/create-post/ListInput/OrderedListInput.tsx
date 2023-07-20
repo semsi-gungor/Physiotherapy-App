@@ -16,26 +16,18 @@ import ToolBar from "../ToolBar/ToolBar";
 import ToolBarSection from "../ToolBar/ToolBarSection";
 import RadioInput from "@/components/ui/input/RadioInput";
 
-type InputField = {
-  index: number;
-  content: string;
-};
+interface ListInputProps {
+  initialValue: string[];
+  isBlog: boolean;
+}
 
-let initialState: InputField[] = [];
-
-initialState.push({ index: 1, content: "" });
-
-interface ListInputProps {}
-
-const ListInput: FC<ListInputProps> = ({}) => {
+const ListInput: FC<ListInputProps> = ({ initialValue, isBlog }) => {
   const blogCtx = useContext(blogContext);
 
-  const [inputArray, setInputArray] = useState(initialState);
+  const [inputArray, setInputArray] = useState(initialValue ?? []);
 
   const form = useForm({ mode: "all" });
   const { register, handleSubmit, formState } = form;
-
-  const { errors } = formState;
 
   function onSubmit(data: FieldValues) {
     let { listStyle, ...rest } = data;
@@ -51,6 +43,35 @@ const ListInput: FC<ListInputProps> = ({}) => {
 
     blogCtx.addPost(HeaderPost);
     console.log(blogCtx.postArray);
+  }
+
+  if (!isBlog) {
+    return (
+      <div className={classes.listContainer}>
+        {inputArray.map((input, index) => {
+          return (
+            <Input
+              initialValue={input}
+              key={index}
+              label={(index + 1).toString()}
+              register={register}
+              name={(index + 1).toString()}
+              type="text"
+            />
+          );
+        })}
+        <div
+          className={classes.addButton}
+          onClick={() => {
+            setInputArray((prev) => {
+              return [...prev, ""];
+            });
+          }}
+        >
+          <AiOutlinePlusSquare />
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -73,14 +94,16 @@ const ListInput: FC<ListInputProps> = ({}) => {
           />
         </ToolBarSection>
       </ToolBar>
+
       <div className={classes.listContainer}>
-        {inputArray.map((input) => {
+        {inputArray.map((input, index) => {
           return (
             <Input
-              key={input.index}
-              label={input.index.toString()}
+              initialValue={input}
+              key={index}
+              label={(index + 1).toString()}
               register={register}
-              name={input.index.toString()}
+              name={(index + 1).toString()}
               type="text"
             />
           );
@@ -90,7 +113,7 @@ const ListInput: FC<ListInputProps> = ({}) => {
         className={classes.addButton}
         onClick={() => {
           setInputArray((prev) => {
-            return [...prev, { index: prev.length + 1, content: "" }];
+            return [...prev, ""];
           });
         }}
       >
