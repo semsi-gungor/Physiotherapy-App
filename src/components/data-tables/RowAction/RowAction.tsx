@@ -1,123 +1,71 @@
 "use client";
 
-import { FC, useState, useContext } from "react";
-import { adminContext } from "@/context/adminContext";
+import { FC, ReactNode, useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 import classes from "./RowAction.module.css";
 import { LuMoreHorizontal } from "react-icons/lu";
 import Button from "@/components/ui/button/Button";
 import { motion, AnimatePresence } from "framer-motion";
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { User } from "@/app/(admin)/users/columns";
-import { Appointment } from "@/app/(admin)/dashboard/randevular/columns";
 import * as Popover from "@radix-ui/react-popover";
-import Input from "@/components/ui/input/Input";
-import { useForm, FieldValues } from "react-hook-form";
+import Modal from "@/components/ui/modal/Modal";
 
 interface RowActionProps {
-  rowData: User | Appointment;
+  title: string;
+  children: ReactNode;
+  onSubmit?: () => Promise<void>;
 }
 
-const RowAction: FC<RowActionProps> = ({ rowData }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const form = useForm({ mode: "all" });
-  const { register, handleSubmit, formState } = form;
-
-  const { errors } = formState;
-
-  function onSubmit(data: FieldValues) {
-    console.log("submitted", data);
-  }
+const RowAction: FC<RowActionProps> = ({ title, children, onSubmit }) => {
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <>
-      <DropdownMenu.Root open={isOpen} onOpenChange={setIsOpen}>
-        <DropdownMenu.Trigger asChild>
-          <span>
-            <Button size="full" variant="ghost">
-              <LuMoreHorizontal />
-            </Button>
-          </span>
-        </DropdownMenu.Trigger>
+    <Popover.Root open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
+      <Popover.Trigger asChild>
+        <span>
+          <Button size="full" variant="ghost">
+            <LuMoreHorizontal />
+          </Button>
+        </span>
+      </Popover.Trigger>
 
-        <AnimatePresence>
-          {isOpen && (
-            <DropdownMenu.Portal forceMount>
-              <DropdownMenu.Content
-                asChild
-                sideOffset={10}
-                align="start"
-                side="left"
+      <AnimatePresence>
+        {isPopoverOpen && (
+          <Popover.Portal forceMount>
+            <Popover.Content asChild sideOffset={10} align="start" side="left">
+              <motion.ul
+                className={classes.list}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ type: "spring", stiffness: 100 }}
               >
-                <motion.ul
-                  className={classes.list}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ type: "spring", stiffness: 100 }}
+                <li className={classes.listItem} onClick={() => {}}>
+                  Sil
+                </li>
+                <Modal
+                  isModalOpen={isDialogOpen}
+                  setIsModalOpen={setIsDialogOpen}
                 >
-                  <DropdownMenu.Item asChild>
+                  <Modal.Button asChild>
                     <li className={classes.listItem} onClick={() => {}}>
-                      Sil
+                      Düzenle
                     </li>
-                  </DropdownMenu.Item>
-                  <DropdownMenu.Item asChild>
-                    <Popover.Root>
-                      <Popover.Trigger asChild>
-                        <li className={classes.listItem}>Düzenle</li>
-                      </Popover.Trigger>
-                      <Popover.Portal>
-                        <Popover.Content side="left" sideOffset={20}>
-                          <div className={classes.rowEdit}>
-                            <form
-                              className={classes.rowEditForm}
-                              onSubmit={handleSubmit(onSubmit)}
-                            >
-                              <Input
-                                initialValue={rowData.email}
-                                name="email"
-                                register={register}
-                                type="email"
-                                label="Email"
-                                errorMessage={errors.email?.message?.toString()}
-                                pattern={{
-                                  value:
-                                    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-                                  message: "Hatalı e-mail girişi.",
-                                }}
-                              />
-                              <Input
-                                initialValue={rowData.fullName}
-                                name="name"
-                                register={register}
-                                type="text"
-                                label="İsim"
-                                errorMessage={errors.name?.message?.toString()}
-                              />
-                              <Input
-                                initialValue={rowData.tel}
-                                name="telno"
-                                register={register}
-                                type="text"
-                                label="Telefon numarası"
-                                errorMessage={errors.telno?.message?.toString()}
-                              />
-                              <Button size="md" variant="primary">
-                                Gönder
-                              </Button>
-                            </form>
-                          </div>
-                        </Popover.Content>
-                      </Popover.Portal>
-                    </Popover.Root>
-                  </DropdownMenu.Item>
-                </motion.ul>
-              </DropdownMenu.Content>
-            </DropdownMenu.Portal>
-          )}
-        </AnimatePresence>
-      </DropdownMenu.Root>
-    </>
+                  </Modal.Button>
+                  <AnimatePresence>
+                    {isDialogOpen && (
+                      <Modal.Content title={title}>
+                        <div className={classes.body}>{children}</div>
+                      </Modal.Content>
+                    )}
+                  </AnimatePresence>
+                </Modal>
+              </motion.ul>
+            </Popover.Content>
+          </Popover.Portal>
+        )}
+      </AnimatePresence>
+    </Popover.Root>
   );
 };
 
