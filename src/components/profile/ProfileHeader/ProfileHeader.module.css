@@ -1,0 +1,83 @@
+.container {
+  grid-area: 1 / 1 / 5 / 11;
+  --s: 64px; /* control the size */
+  --c1: var(--color-1);
+  --c2: var(--color-3);
+
+  --_g: 90deg, #0000 0;
+  background: conic-gradient(from 135deg, var(--c1) var(--_g)) var(--s)
+      calc(var(--s) / 2),
+    conic-gradient(from 135deg, var(--c2) var(--_g)),
+    conic-gradient(from 135deg at 50% 0, var(--c1) var(--_g)) var(--c2);
+  background-size: calc(2 * var(--s)) var(--s);
+  position: relative;
+}
+
+.profile {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 30%;
+  display: grid;
+  place-items: center;
+  font-size: 6rem;
+  color: var(--color-5);
+  background-color: var(--color-white);
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.name {
+  width: auto;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  background-color: var(--color-white);
+
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  color: var(--color-5);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nameContainer {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 701px) {
+  .profile {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+  }
+
+  .name {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    letter-spacing: -0.1rem;
+  }
+
+  .nameContainer {
+    position: absolute;
+    top: 60%;
+    left: 60%;
+  }
+}
