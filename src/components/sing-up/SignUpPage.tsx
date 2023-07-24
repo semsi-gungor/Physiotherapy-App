@@ -27,6 +27,7 @@ export default function SignUpPage() {
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={classes.leftForm}>
           <Input
+            initialValue={""}
             name="signUpName"
             register={register}
             type="text"
@@ -34,6 +35,7 @@ export default function SignUpPage() {
             errorMessage={errors.signUpName?.message?.toString()}
           />
           <Input
+            initialValue={""}
             name="surname"
             register={register}
             type="text"
@@ -43,6 +45,7 @@ export default function SignUpPage() {
 
           <div className={classes.dateOfBirth}>
             <Input
+              initialValue={""}
               name="day"
               register={register}
               type="number"
@@ -52,6 +55,7 @@ export default function SignUpPage() {
               errorMessage={errors.day?.message?.toString()}
             />
             <Input
+              initialValue={""}
               name="month"
               register={register}
               type="number"
@@ -61,6 +65,7 @@ export default function SignUpPage() {
               errorMessage={errors.month?.message?.toString()}
             />
             <Input
+              initialValue={""}
               name="year"
               register={register}
               type="number"
@@ -72,6 +77,7 @@ export default function SignUpPage() {
           </div>
 
           <Input
+            initialValue={""}
             name="email"
             register={register}
             type="email"
@@ -85,6 +91,7 @@ export default function SignUpPage() {
         </div>
         <div className={classes.rightForm}>
           <Input
+            initialValue={""}
             name="password"
             register={register}
             type="password"
@@ -95,6 +102,7 @@ export default function SignUpPage() {
             }}
           />
           <Input
+            initialValue={""}
             name="passwordReply"
             register={register}
             type="password"
