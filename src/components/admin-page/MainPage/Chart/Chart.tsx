@@ -14,12 +14,14 @@ import {
 interface ChartProps {
   data: { name: string; value: number }[];
   color: string;
+  title: string;
 }
 
-const Chart: FC<ChartProps> = ({ data, color }) => {
+const Chart: FC<ChartProps> = ({ data, color, title }) => {
   return (
     <div className={classes.container}>
-      <ResponsiveContainer width={"50%"}>
+      <h2 className={classes.title}>{title}</h2>
+      <ResponsiveContainer width={"50%"} className={classes.chart}>
         <BarChart
           data={data}
           margin={{
