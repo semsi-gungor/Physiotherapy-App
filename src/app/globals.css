@@ -18,6 +18,9 @@
   --color-c: #d97a14;
 
   --error: rgb(255, 94, 65);
+  --warning: rgb(255, 220, 65);
+  --info: rgb(65, 151, 255);
+  --succsess: rgb(65, 255, 81);
 }
 
 *,
