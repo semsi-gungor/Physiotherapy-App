@@ -4,11 +4,18 @@ import classes from "./Button.module.css";
 interface ButtonProps {
   variant?: "primary" | "outlined" | "ghost";
   size?: "sm" | "md" | "lg" | "full" | "half" | "thquarters";
+  disabled?: boolean;
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const Button: FC<ButtonProps> = ({ children, variant, size }) => {
+const Button: FC<ButtonProps> = ({
+  children,
+  variant,
+  size,
+  onClick,
+  disabled,
+}) => {
   let classNames = `${classes.button}`;
 
   if (variant === "outlined") {
@@ -31,13 +38,15 @@ const Button: FC<ButtonProps> = ({ children, variant, size }) => {
     classNames += ` ${classes.half}`;
   }
 
-  return <button className={classNames}>{children}</button>;
+  if (disabled) {
+    classNames += ` ${classes.disabled}`;
+  }
 
-  //   return (
-  //     <button className={`${classes.button} ${classes.primary} ${classes.md}`}>
-  //       {children}
-  //     </button>
-  //   );
+  return (
+    <button className={classNames} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

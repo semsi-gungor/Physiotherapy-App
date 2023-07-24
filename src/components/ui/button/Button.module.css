@@ -70,3 +70,9 @@
   width: 75%;
   height: 3rem;
 }
+
+.disabled {
+  pointer-events: none;
+  color: var(--color-2) !important;
+  background-color: var(--color-4);
+}
