@@ -10,7 +10,7 @@ interface TextareaInputProps {
   label: string;
   errorMessage?: string;
   register: UseFormRegister<FieldValues>;
-  initialValue: string;
+  initialValue?: string;
 }
 
 const TextareaInput: FC<TextareaInputProps> = ({
