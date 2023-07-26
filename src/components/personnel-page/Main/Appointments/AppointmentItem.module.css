@@ -1,0 +1,56 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  height: 6rem;
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.item:hover {
+  background-color: rgba(0, 42, 255, 0.074);
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon {
+  font-size: 4rem;
+  color: var(--color-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-6);
+}
+
+.age {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-5);
+}
+
+.time {
+  width: 5rem;
+  height: 2.5rem;
+  background-color: var(--color-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid var(--color-5);
+  color: var(--color-6);
+  font-size: 1.1rem;
+  font-weight: 700;
+}

@@ -1,0 +1,50 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 40px;
+  background-color: var(--color-2);
+  display: grid;
+  place-items: center;
+  font-size: 7rem;
+  color: var(--color-5);
+}
+
+.name {
+  color: var(--color-6);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.title {
+  color: var(--color-5);
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  gap: 1rem;
+}
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-5);
+}
+
+.number {
+  color: var(--info);
+  font-size: 1.2rem;
+  font-weight: 700;
+}

@@ -1,0 +1,26 @@
+.container {
+  grid-area: 5 / 1 / 9 / 5;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1rem;
+}
+
+.list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 80%;
+  width: 100%;
+}
+
+.caption {
+  text-transform: uppercase;
+  color: var(--color-c);
+  height: 20%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
