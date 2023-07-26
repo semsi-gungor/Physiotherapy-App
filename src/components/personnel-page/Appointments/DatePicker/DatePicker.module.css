@@ -1,0 +1,28 @@
+.container {
+  grid-area: 1 / 1 / 7 / 4;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.caption {
+  color: var(--color-6);
+}
+
+.caption h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: -0.1rem;
+}
+
+.calendar {
+  padding: 1rem;
+  background-color: var(--color-transparent);
+  border-radius: 30px;
+}
