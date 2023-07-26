@@ -9,9 +9,11 @@
   --color-1-h: #d6d6d6;
   --color-2: #dfebf6;
   --color-3: #aac7d8;
-  --color-4: #768a96;
+  --color-4: #788b97;
   --color-5: #44576d;
   --color-6: #29353c;
+
+  --color-transparent: rgba(120, 139, 151, 0.344);
 
   --color-white: #fff;
 
@@ -21,6 +23,8 @@
   --warning: rgb(255, 220, 65);
   --info: rgb(65, 151, 255);
   --succsess: rgb(65, 255, 81);
+  --succsess-800: rgb(0, 170, 14);
+  --color-c-blue: rgb(37 99 235);
 }
 
 *,
