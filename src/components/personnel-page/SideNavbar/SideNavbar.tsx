@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { BsPersonLinesFill, BsFillChatLeftQuoteFill } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
 import NavLink from "./NavLink";
+import { motion } from "framer-motion";
 
 interface SideNavbarProps {}
 
@@ -34,16 +35,25 @@ const SideNavbar: FC<SideNavbarProps> = ({}) => {
       <ul className={classes.navlist}>
         {links.map((link) => {
           return (
-            <NavLink
-              key={link.id}
-              active={activeTab === link.id}
-              icon={link.icon}
-              link={link.link}
-              title={link.title}
-              onClick={() => {
-                setActiveTab(link.id);
-              }}
-            />
+            <div style={{ position: "relative" }} key={link.id}>
+              <NavLink
+                active={activeTab === link.id}
+                icon={link.icon}
+                link={link.link}
+                title={link.title}
+                onClick={() => {
+                  setActiveTab(link.id);
+                }}
+              ></NavLink>
+
+              {activeTab === link.id && (
+                <motion.span
+                  layoutId="activePill"
+                  className={classes.active}
+                  style={{ borderRadius: "15px" }}
+                ></motion.span>
+              )}
+            </div>
           );
         })}
       </ul>

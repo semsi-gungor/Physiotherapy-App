@@ -20,4 +20,11 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  position: relative;
+}
+
+.active {
+  position: absolute;
+  background-color: var(--color-transparent);
+  inset: 0;
 }

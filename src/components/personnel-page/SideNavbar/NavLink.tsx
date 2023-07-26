@@ -14,6 +14,7 @@ interface NavLinkProps {
   icon: IconType;
   title: string;
   active: boolean;
+  children?: React.ReactNode;
   onClick?: () => void;
 }
 
@@ -21,14 +22,11 @@ const NavLink: FC<NavLinkProps> = ({
   link,
   icon: Icon,
   title,
-  active,
   onClick,
+  children,
 }) => {
   return (
-    <li
-      className={`${classes.listItem} ${active ? classes.active : ""}`}
-      onClick={onClick}
-    >
+    <li className={`${classes.listItem}`} onClick={onClick}>
       <TooltipProvider delayDuration={100}>
         <Tooltip>
           <TooltipTrigger asChild>
@@ -41,6 +39,7 @@ const NavLink: FC<NavLinkProps> = ({
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
+      {children}
     </li>
   );
 };
