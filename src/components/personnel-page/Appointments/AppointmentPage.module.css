@@ -1,0 +1,12 @@
+.container {
+  width: calc(100% - var(--admin-nav-width));
+  height: 100vh;
+  margin-left: var(--admin-nav-width);
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  padding: 1rem;
+  gap: 1rem;
+}
