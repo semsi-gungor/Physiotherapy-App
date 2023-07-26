@@ -4,6 +4,8 @@ import Navbar from "@/components/navbar/Navbar";
 import UIContextProvier from "@/context/uiControl";
 import Footer from "@/components/footer/Footer";
 import ScrollToTop from "@/components/ui/scroll-to-top/ScrollToTop";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "App",
@@ -25,6 +27,19 @@ export default function RootLayout({
         className={newFont.className}
         style={{ position: "relative", backgroundColor: "var(--color-1)" }}
       >
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          limit={2}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
         <UIContextProvier>
           <Navbar />
         </UIContextProvier>
