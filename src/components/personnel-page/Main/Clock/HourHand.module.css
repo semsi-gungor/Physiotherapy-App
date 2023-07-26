@@ -1,0 +1,30 @@
+.hand {
+  width: 90%;
+  display: flex;
+  position: absolute;
+}
+
+.back {
+  flex: 1;
+  background-color: rgba(72, 72, 72, 0);
+}
+
+.hour {
+  flex: 1;
+  background-color: var(--color-6);
+  height: 6px;
+  border-radius: 10px;
+}
+
+.minute {
+  flex: 1;
+  background-color: var(--color-6);
+  height: 4px;
+  border-radius: 20px;
+}
+
+.second {
+  flex: 1;
+  background-color: var(--color-c);
+  height: 2px;
+}
