@@ -1,9 +1,8 @@
 import { FC } from "react";
+import AppointmentPage from "@/components/personnel-page/Appointments/AppointmentPage";
 
-interface Props {}
-
-const Page: FC<Props> = ({}) => {
-  return <div></div>;
+const Page: FC = ({}) => {
+  return <AppointmentPage />;
 };
 
 export default Page;
