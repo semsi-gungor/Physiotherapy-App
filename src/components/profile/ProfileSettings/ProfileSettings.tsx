@@ -5,12 +5,11 @@ import classes from "./ProfileSettings.module.css";
 import Modal from "@/components/ui/modal/Modal";
 import { AnimatePresence } from "framer-motion";
 import { FiSettings } from "react-icons/fi";
-import { User } from "@/app/(admin)/users/columns";
 import Input from "@/components/ui/input/Input";
 import { useForm, FieldValues } from "react-hook-form";
 import Button from "@/components/ui/button/Button";
 
-const user: User = {
+const user = {
   userId: "1",
   fullName: "Şemsi Güngör",
   dateOfBirth: "04.09.1999",
@@ -34,7 +33,7 @@ const ProfileSettings: FC<ProfileSettingsProps> = ({}) => {
         </Modal.Button>
         <AnimatePresence>
           {isModalOpen && (
-            <Modal.Content title="Profil Ayarları">
+            <Modal.Content>
               <Form closeModal={setIsModalOpen} />
             </Modal.Content>
           )}
@@ -50,9 +49,7 @@ function Form({ closeModal }: { closeModal: (state: boolean) => void }) {
 
   const { errors } = formState;
 
-  function onSubmit(data: FieldValues) {
-    console.log("submitted", data);
-  }
+  function onSubmit(data: FieldValues) {}
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Input

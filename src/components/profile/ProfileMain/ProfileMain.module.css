@@ -1,15 +1,1 @@
-.container {
-  grid-area: 7 / 2 / 10 / 10;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-
-@media (min-width: 701px) {
-  .container {
-    grid-area: 7 / 2 / 10 / 6;
-  }
-}
