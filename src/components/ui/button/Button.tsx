@@ -3,10 +3,11 @@ import classes from "./Button.module.css";
 
 interface ButtonProps {
   variant?: "primary" | "outlined" | "ghost";
-  size?: "sm" | "md" | "lg" | "full" | "half" | "thquarters";
+  size?: "sm" | "md" | "lg" | "full" | "half" | "thquarters" | "square";
   disabled?: boolean;
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  type?: "button" | "reset" | "submit";
 }
 
 const Button: FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const Button: FC<ButtonProps> = ({
   size,
   onClick,
   disabled,
+  type = "button",
 }) => {
   let classNames = `${classes.button}`;
 
@@ -34,8 +36,10 @@ const Button: FC<ButtonProps> = ({
     classNames += ` ${classes.thqurters}`;
   } else if (size === "full") {
     classNames += ` ${classes.full}`;
-  } else {
+  } else if (size === "half") {
     classNames += ` ${classes.half}`;
+  } else if (size === "square") {
+    classNames += ` ${classes.square}`;
   }
 
   if (disabled) {
@@ -43,7 +47,7 @@ const Button: FC<ButtonProps> = ({
   }
 
   return (
-    <button className={classNames} onClick={onClick}>
+    <button type={type} className={classNames} onClick={onClick}>
       {children}
     </button>
   );

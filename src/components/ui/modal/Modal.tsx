@@ -22,13 +22,7 @@ export default function Modal({
   );
 }
 
-function ModalContent({
-  title,
-  children,
-}: {
-  title?: string;
-  children: ReactNode;
-}) {
+function ModalContent({ children }: { children: ReactNode }) {
   return (
     <Dialog.Portal forceMount>
       <Dialog.Overlay asChild>
@@ -48,7 +42,7 @@ function ModalContent({
         >
           <div className={classes.header}>
             <Dialog.Title asChild>
-              <h2>{title ? title : ""}</h2>
+              <h2>{""}</h2>
             </Dialog.Title>
             <Dialog.Close asChild>
               <span>

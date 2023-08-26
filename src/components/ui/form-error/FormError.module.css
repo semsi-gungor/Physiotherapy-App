@@ -1,0 +1,15 @@
+.errorsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  gap: 0.3rem;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid var(--error);
+  background-color: rgb(241, 227, 227);
+}
+
+.errorItem {
+  color: var(--error);
+}

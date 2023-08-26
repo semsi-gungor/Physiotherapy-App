@@ -3,8 +3,9 @@
 import classes from "./ScrollToTop.module.css";
 import { BsChevronUp } from "react-icons/bs";
 import useScroll from "@/hooks/useScroll";
+import { FC } from "react";
 
-export default function ScrollToTop() {
+const ScrollToTop: FC = ({}) => {
   const { isScrollOnTop, scrollToTop } = useScroll();
 
   return (
@@ -17,4 +18,6 @@ export default function ScrollToTop() {
       <BsChevronUp />
     </div>
   );
-}
+};
+
+export default ScrollToTop;

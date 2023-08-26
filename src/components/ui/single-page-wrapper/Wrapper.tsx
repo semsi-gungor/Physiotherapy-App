@@ -18,7 +18,7 @@ export default function Wrapper({ children, inpage, background }: Props) {
           <div className={classes.imageContainer}>
             <Image
               src={background}
-              quality={100}
+              quality={50}
               alt="bg"
               style={{
                 objectFit: "cover",

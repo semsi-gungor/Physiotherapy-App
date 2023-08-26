@@ -5,7 +5,7 @@ import { IconType } from "react-icons/lib";
 
 interface RadioInputProps {
   name: string;
-  register: UseFormRegister<FieldValues>;
+  register: UseFormRegister<any>;
   value: string;
   label?: string;
   icon?: IconType;

@@ -3,7 +3,6 @@
   min-height: 100vh;
   padding: 0 10vw;
   position: relative;
-  background-color: var(--color-1);
   display: flex;
   align-items: center;
   justify-content: center;

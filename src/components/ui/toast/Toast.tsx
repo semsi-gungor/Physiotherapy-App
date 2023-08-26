@@ -46,7 +46,7 @@ const Toast: FC<ToastProps> = ({
         clearTimeout(timeout);
       };
     }
-  }, [isError, isLoading, isSuccsess]);
+  }, [isError, isLoading, isSuccsess, duration, setOpen]);
 
   return (
     <div className={classes.viewport}>
@@ -57,6 +57,13 @@ const Toast: FC<ToastProps> = ({
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "100%", opacity: 0 }}
             className={classes.root}
+            style={{
+              width: `${
+                pendingMessage!.trim().length * 10 < 300
+                  ? 300
+                  : pendingMessage!.trim().length * 10
+              }px`,
+            }}
             transition={{ type: "keyframes" }}
           >
             {title && (

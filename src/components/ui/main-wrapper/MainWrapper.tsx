@@ -1,11 +1,14 @@
 "use client";
 
+import { FC } from "react";
 import classes from "./MainWrapper.module.css";
 
 type Props = {
   children?: React.ReactNode;
 };
 
-export default function MainWrapper({ children }: Props) {
+const MainWrapper: FC<Props> = ({ children }) => {
   return <div className={classes.wrapper}>{children}</div>;
-}
+};
+
+export default MainWrapper;

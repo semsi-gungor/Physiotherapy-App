@@ -1,5 +1,6 @@
 "use client";
 
+import { FC } from "react";
 import classes from "./Input.module.css";
 import { UseFormRegister, FieldValues } from "react-hook-form";
 import { BiErrorCircle } from "react-icons/bi";
@@ -9,7 +10,7 @@ type Props = {
   name: string;
   label: string;
   initialValue?: string | string[];
-  register: UseFormRegister<FieldValues>;
+  register: UseFormRegister<any>;
   required?: string;
   errorMessage?: string;
   pattern?: { value: RegExp; message: string };
@@ -18,7 +19,7 @@ type Props = {
   min?: { value: number; message: string };
 };
 
-export default function Input({
+const Input: FC<Props> = ({
   type,
   name,
   label,
@@ -29,7 +30,7 @@ export default function Input({
   register,
   validate,
   initialValue,
-}: Props) {
+}) => {
   const inputRegister = register(name, {
     required: { value: true, message: `${label} boş bırakılamaz.` },
     pattern: pattern,
@@ -61,4 +62,6 @@ export default function Input({
       )}
     </div>
   );
-}
+};
+
+export default Input;

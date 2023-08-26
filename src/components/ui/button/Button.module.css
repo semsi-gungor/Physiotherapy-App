@@ -71,6 +71,11 @@
   height: 3rem;
 }
 
+.square {
+  width: 3rem;
+  height: 3rem;
+}
+
 .disabled {
   pointer-events: none;
   color: var(--color-2) !important;
