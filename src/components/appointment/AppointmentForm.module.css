@@ -4,6 +4,7 @@
   align-items: center;
   width: 60%;
   animation: slide-in ease 400ms forwards;
+  position: relative;
 }
 
 @keyframes slide-in {
