@@ -20,7 +20,10 @@ const TextPost: FC<TextPostProps> = ({ post }) => {
   }
 
   return (
-    <p className={`${classes.text} ${textAlign}`} style={{ color: `${color}` }}>
+    <p
+      className={`${classes.text} ${textAlign}`}
+      style={{ color: `${color} text-clip` }}
+    >
       {content}
     </p>
   );

@@ -36,10 +36,26 @@ const BlogRender: FC<BlogRenderProps> = ({ post, setType }) => {
       {postType === "list" && <ListPost post={post} />}
       {postType === "quote" && <QuotePost post={post} />}
       <div className={classes.move}>
-        <span>
+        <span
+          onClick={() => {
+            let command = {
+              id: post.postId,
+              direction: true,
+            };
+            blogCtx.swapCommand(command);
+          }}
+        >
           <BsChevronUp />
         </span>
-        <span>
+        <span
+          onClick={() => {
+            let command = {
+              id: post.postId,
+              direction: false,
+            };
+            blogCtx.swapCommand(command);
+          }}
+        >
           <BsChevronDown />
         </span>
       </div>
@@ -55,6 +71,7 @@ const BlogRender: FC<BlogRenderProps> = ({ post, setType }) => {
           <AiOutlineEdit />
         </span>
         <span
+          style={{ color: "var(--error)" }}
           onClick={() => {
             blogCtx.removePost(postId);
           }}

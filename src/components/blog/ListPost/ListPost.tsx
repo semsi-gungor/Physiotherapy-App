@@ -7,12 +7,21 @@ interface ListPostProps {
 }
 
 const ListPost: FC<ListPostProps> = ({ post }) => {
-  const content = post.postContent;
+  let content = post.postContent.split("\n");
+
+  content = content.map((item) => {
+    return item.split(".")[1];
+  });
+
   let mappedData;
 
   if (Array.isArray(content)) {
-    mappedData = content.map((item) => {
-      return <li className={classes.item}>{item}</li>;
+    mappedData = content.map((item, index) => {
+      return (
+        <li key={item + index.toString()} className={classes.item}>
+          {item}
+        </li>
+      );
     });
   } else {
     mappedData = [content];
@@ -20,10 +29,12 @@ const ListPost: FC<ListPostProps> = ({ post }) => {
   const listType = post.options?.listType;
 
   if (listType === "ol") {
-    return <ol className={classes.list}>{mappedData}</ol>;
+    return (
+      <ol className={`${classes.list} ${classes.numbers}`}>{mappedData}</ol>
+    );
   }
 
-  return <ul className={classes.list}>{mappedData}</ul>;
+  return <ul className={`${classes.list} ${classes.dots}`}>{mappedData}</ul>;
 };
 
 export default ListPost;

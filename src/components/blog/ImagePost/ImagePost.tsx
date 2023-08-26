@@ -1,16 +1,14 @@
 import { FC } from "react";
 import classes from "./ImagePost.module.css";
 import { BlogPart } from "@/types/blog-posts";
+import Image from "next/image";
 
 interface ImagePostProps {
   post: BlogPart;
 }
 
 const ImagePost: FC<ImagePostProps> = ({ post }) => {
-  const url = post.postContent[0];
-  const content = post.postContent[1];
-
-  console.log(url);
+  const url = post.postContent.toString();
 
   const size = post.options?.size;
 
@@ -24,10 +22,9 @@ const ImagePost: FC<ImagePostProps> = ({ post }) => {
 
   return (
     <div className={classes.container}>
-      <div className={`${imageSize}`}>
-        <img src={url} alt={content} />
+      <div className={`${imageSize} relative`}>
+        <Image src={url} alt="post" fill quality={50} />
       </div>
-      <p className={classes.content}>{content}</p>
     </div>
   );
 };
