@@ -1,6 +1,9 @@
 import SideNavbar from "@/components/personnel-page/SideNavbar/SideNavbar";
 import "../globals.css";
 import { Nunito } from "next/font/google";
+import { options } from "@/app/api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth";
+import SessionProvider from "@/components/providers/SessionProvider/SessionProvider";
 
 export const metadata = {
   title: "App",
@@ -11,20 +14,24 @@ const newFont = Nunito({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getServerSession(options);
   return (
-    <html lang="tr">
-      <body
-        className={newFont.className}
-        style={{ position: "relative", backgroundColor: "var(--color-1)" }}
-      >
-        <SideNavbar />
-        {children}
-      </body>
-    </html>
+    <div
+      className={newFont.className}
+      style={{ position: "relative", backgroundColor: "var(--color-1)" }}
+    >
+      {(session?.user.role === "ADMIN" ||
+        session?.user.role === "PERSONNEL") && (
+        <SessionProvider>
+          <SideNavbar />
+        </SessionProvider>
+      )}
+      {children}
+    </div>
   );
 }
