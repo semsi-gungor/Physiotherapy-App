@@ -1,8 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
 let lastScroll = 0;
 
-export default function useScroll() {
+const useScroll = () => {
   const [scrollDirection, setScrolldirection] = useState(false);
   const [isScrollOnTop, setIsScrollOnTop] = useState(true);
 
@@ -41,4 +43,6 @@ export default function useScroll() {
   };
 
   return { scrollDirection, isScrollOnTop, scrollToTop };
-}
+};
+
+export default useScroll;
