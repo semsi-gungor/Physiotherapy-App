@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState, useContext } from "react";
+import { FC, useState, useContext, Dispatch, SetStateAction } from "react";
 import { uiContext } from "@/context/uiControl";
 import { blogContext } from "@/context/blogContext";
 import classes from "./InputMenu.module.css";

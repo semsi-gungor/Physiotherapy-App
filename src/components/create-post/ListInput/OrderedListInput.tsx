@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useContext, useState } from "react";
+import { FC, useContext, useState, useEffect } from "react";
 import { blogContext } from "@/context/blogContext";
 import classes from "./OrderedListInput.module.css";
 import Input from "@/components/ui/input/Input";
@@ -15,9 +15,10 @@ import { BlogPart } from "@/types/blog-posts";
 import ToolBar from "../ToolBar/ToolBar";
 import ToolBarSection from "../ToolBar/ToolBarSection";
 import RadioInput from "@/components/ui/input/RadioInput";
+import TextArea from "../TextInput/TextArea";
 
 interface ListInputProps {
-  initialValue: string[];
+  initialValue?: string[];
   isBlog: boolean;
 }
 
@@ -26,36 +27,48 @@ const ListInput: FC<ListInputProps> = ({ initialValue, isBlog }) => {
 
   const [inputArray, setInputArray] = useState(initialValue ?? []);
 
-  const form = useForm({ mode: "all" });
-  const { register, handleSubmit, formState } = form;
+  const form = useForm({
+    mode: "all",
+    defaultValues: {
+      list: "",
+    },
+  });
+  const { register, handleSubmit, formState, watch, setValue } = form;
 
-  function onSubmit(data: FieldValues) {
-    let { listStyle, ...rest } = data;
+  function onSubmit(data: any) {
+    let { listStyle, list } = data;
 
-    let array = Object.values(rest);
+    let textString: string = list;
 
     let HeaderPost: BlogPart = {
       postId: Date.now().toString(),
       postType: "list",
-      postContent: array,
-      options: { listType: data.listStyle },
+      postContent: textString,
+      options: { listType: listStyle },
     };
 
     blogCtx.addPost(HeaderPost);
-    console.log(blogCtx.postArray);
   }
+
+  let listValue = watch("list");
+
+  let length = listValue.split("\n").length;
+
+  useEffect(() => {
+    setValue("list", listValue + `${listValue.split("\n").length}. `);
+  }, [length, listValue, setValue]);
 
   if (!isBlog) {
     return (
       <div className={classes.listContainer}>
         {inputArray.map((input, index) => {
+          let now = Date.now();
           return (
             <Input
-              initialValue={input}
               key={index}
-              label={(index + 1).toString()}
+              label={now.toString()}
               register={register}
-              name={(index + 1).toString()}
+              name={now.toString()}
               type="text"
             />
           );
@@ -96,7 +109,7 @@ const ListInput: FC<ListInputProps> = ({ initialValue, isBlog }) => {
       </ToolBar>
 
       <div className={classes.listContainer}>
-        {inputArray.map((input, index) => {
+        {/* {inputArray.map((input, index) => {
           return (
             <Input
               initialValue={input}
@@ -107,9 +120,10 @@ const ListInput: FC<ListInputProps> = ({ initialValue, isBlog }) => {
               type="text"
             />
           );
-        })}
+        })} */}
+        <TextArea label="List" name="list" register={register} />
       </div>
-      <div
+      {/* <div
         className={classes.addButton}
         onClick={() => {
           setInputArray((prev) => {
@@ -118,8 +132,10 @@ const ListInput: FC<ListInputProps> = ({ initialValue, isBlog }) => {
         }}
       >
         <AiOutlinePlusSquare />
-      </div>
-      <Button size="md">Gönder</Button>
+      </div> */}
+      <Button size="md" type="submit">
+        Gönder
+      </Button>
     </form>
   );
 };

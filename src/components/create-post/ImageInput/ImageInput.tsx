@@ -24,12 +24,11 @@ const ImageInput: FC<ImageInputProps> = ({}) => {
     let HeaderPost: BlogPart = {
       postId: Date.now().toString(),
       postType: "image",
-      postContent: [data.url, data.title],
+      postContent: data.url,
       options: { size: data.size },
     };
 
     blogCtx.addPost(HeaderPost);
-    console.log(blogCtx.postArray);
   }
 
   return (
@@ -66,14 +65,9 @@ const ImageInput: FC<ImageInputProps> = ({}) => {
         label="Resim URL'si"
         errorMessage={errors.url?.message?.toString()}
       />
-      <Input
-        name="title"
-        register={register}
-        type="text"
-        label="Resim başlığı"
-        errorMessage={errors.title?.message?.toString()}
-      />
-      <Button size="md">Gönder</Button>
+      <Button size="md" type="submit">
+        Gönder
+      </Button>
     </form>
   );
 };

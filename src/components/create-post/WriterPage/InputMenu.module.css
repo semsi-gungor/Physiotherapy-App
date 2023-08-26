@@ -5,9 +5,9 @@
 }
 
 .menuButton {
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 2rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -24,9 +24,9 @@
 }
 
 .listItem {
-  width: 3rem;
-  height: 3rem;
-  font-size: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 2rem;
   display: grid;
   place-items: center;
   cursor: pointer;

@@ -3,7 +3,7 @@
 import { FC, useContext } from "react";
 import { blogContext } from "@/context/blogContext";
 import classes from "./TextInput.module.css";
-import TextareaInput from "@/components/ui/input/TextareaInput";
+import TextArea from "./TextArea";
 import { useForm, FieldValues } from "react-hook-form";
 import ToolBar from "../ToolBar/ToolBar";
 import ToolBarDivider from "../ToolBar/ToolBarDivider";
@@ -62,14 +62,18 @@ const TextInput: FC = ({}) => {
           />
         </ToolBarSection>
       </ToolBar>
-      <TextareaInput
-        register={register}
-        label="Eklenecek metni giriniz"
-        name="text"
-        errorMessage={errors.text?.message?.toString()}
-      />
+      <div className={classes.textInput}>
+        <TextArea
+          register={register}
+          label="Eklenecek metni giriniz"
+          name="text"
+          errorMessage={errors.text?.message?.toString()}
+        />
+      </div>
 
-      <Button size="md">Gönder</Button>
+      <Button size="md" type="submit">
+        Gönder
+      </Button>
     </form>
   );
 };

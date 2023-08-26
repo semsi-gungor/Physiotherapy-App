@@ -5,10 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-1);
 }
 
 .button {
   position: fixed;
-  right: 2.5rem;
+  right: 4.8rem;
   bottom: 8rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
 }

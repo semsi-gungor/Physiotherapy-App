@@ -5,3 +5,8 @@
   justify-content: space-evenly;
   gap: 2rem;
 }
+
+.textInput {
+  width: 40rem;
+  height: 20rem;
+}

@@ -3,7 +3,7 @@
 import { FC, useContext } from "react";
 import { blogContext } from "@/context/blogContext";
 import classes from "./QuoteInput.module.css";
-import TextareaInput from "@/components/ui/input/TextareaInput";
+import TextArea from "../TextInput/TextArea";
 import { useForm, FieldValues } from "react-hook-form";
 import ToolBar from "../ToolBar/ToolBar";
 import ToolBarDivider from "../ToolBar/ToolBarDivider";
@@ -30,7 +30,6 @@ const QuoteInput: FC = ({}) => {
     };
 
     blogCtx.addPost(HeaderPost);
-    console.log(blogCtx.postArray);
   }
   return (
     <form className={classes.container} onSubmit={handleSubmit(onSubmit)}>
@@ -63,14 +62,18 @@ const QuoteInput: FC = ({}) => {
           />
         </ToolBarSection>
       </ToolBar>
-      <TextareaInput
-        register={register}
-        label="Eklenecek metni giriniz"
-        name="text"
-        errorMessage={errors.text?.message?.toString()}
-      />
+      <div className={classes.textArea}>
+        <TextArea
+          register={register}
+          label="Eklenecek metni giriniz"
+          name="text"
+          errorMessage={errors.text?.message?.toString()}
+        />
+      </div>
 
-      <Button size="md">Gönder</Button>
+      <Button size="md" type="submit">
+        Gönder
+      </Button>
     </form>
   );
 };

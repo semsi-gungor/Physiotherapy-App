@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useContext } from "react";
+import { Dispatch, FC, SetStateAction, useContext, useEffect } from "react";
 import { blogContext } from "@/context/blogContext";
 import classes from "./HeaderInput.module.css";
 import Input from "@/components/ui/input/Input";
@@ -12,16 +12,17 @@ import ToolBar from "../ToolBar/ToolBar";
 import ToolBarSection from "../ToolBar/ToolBarSection";
 import ToolBarDivider from "../ToolBar/ToolBarDivider";
 import { BlogPart } from "@/types/blog-posts";
+import { BsTextLeft, BsTextCenter, BsTextRight } from "react-icons/bs";
 
 type HeaderInputProps = {
-  editInfo: BlogPart;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
 const HeaderInput: FC = () => {
   const blogCtx = useContext(blogContext);
 
   const form = useForm({ mode: "all" });
-  const { register, handleSubmit, formState } = form;
+  const { register, handleSubmit, formState, setValue, watch } = form;
 
   const { errors } = formState;
 
@@ -31,15 +32,43 @@ const HeaderInput: FC = () => {
         postId: Date.now().toString(),
         postType: "header",
         postContent: data.header,
-        options: { color: data.color, size: data.size },
+        options: {
+          color: data.color,
+          size: data.size,
+          textAlignment: data.textAlignment,
+        },
       };
 
       blogCtx.addPost(HeaderPost);
     } else if (blogCtx.postingType === "edit") {
-      let HeaderPost: BlogPart = blogCtx.placeholder;
-      blogCtx.editPost("1", HeaderPost);
+      let editHeaderPost: BlogPart = blogCtx.placeholder;
+      let HeaderPost: BlogPart = {
+        postId: editHeaderPost.postId,
+        postType: editHeaderPost.postType,
+        postContent: data.header,
+        options: {
+          color: data.color,
+          size: data.size,
+          textAlignment: data.textAlignment,
+        },
+      };
+      blogCtx.editPost(HeaderPost);
     }
   }
+
+  useEffect(() => {
+    if (blogCtx.postingType === "edit") {
+      setValue("header", blogCtx.placeholder.postContent);
+      setValue("size", blogCtx.placeholder.options?.size);
+      setValue("textAlignment", blogCtx.placeholder.options?.textAlignment);
+    }
+  }, [
+    blogCtx.postingType,
+    blogCtx.placeholder.postContent,
+    blogCtx.placeholder.options?.size,
+    blogCtx.placeholder.options?.textAlignment,
+    setValue,
+  ]);
 
   return (
     <form className={classes.container} onSubmit={handleSubmit(onSubmit)}>
@@ -71,6 +100,30 @@ const HeaderInput: FC = () => {
             value="sm"
           />
         </ToolBarSection>
+        <ToolBarDivider />
+        <ToolBarSection>
+          <RadioInput
+            id="left"
+            name="textAlignment"
+            register={register}
+            value="left"
+            icon={BsTextLeft}
+          />
+          <RadioInput
+            id="center"
+            name="textAlignment"
+            register={register}
+            value="center"
+            icon={BsTextCenter}
+          />
+          <RadioInput
+            id="right"
+            name="textAlignment"
+            register={register}
+            value="right"
+            icon={BsTextRight}
+          />
+        </ToolBarSection>
       </ToolBar>
       {blogCtx.postingType === "add" && (
         <Input
@@ -79,7 +132,6 @@ const HeaderInput: FC = () => {
           type="text"
           label="Başlık"
           errorMessage={errors.header?.message?.toString()}
-          initialValue=""
         />
       )}
       {blogCtx.postingType === "edit" && (
@@ -89,10 +141,11 @@ const HeaderInput: FC = () => {
           type="text"
           label="Başlık"
           errorMessage={errors.header?.message?.toString()}
-          initialValue={blogCtx.placeholder.postContent}
         />
       )}
-      <Button size="md">Ekle</Button>
+      <Button size="md" type="submit">
+        Ekle
+      </Button>
     </form>
   );
 };
