@@ -1,11 +1,17 @@
 .formPage {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5rem 0;
   animation: slide-in ease 400ms forwards;
+}
+
+.fields {
+  display: flex;
+  gap: 3rem;
+  width: 100%;
 }
 
 @keyframes slide-in {
@@ -26,9 +32,11 @@
 
 .form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 1rem;
+  width: 80%;
 }
 
 .leftForm {
