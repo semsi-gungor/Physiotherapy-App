@@ -1,19 +1,20 @@
 export type BlogPart = {
-  postType: "header" | "text" | "list" | "quote" | "image";
-  postId: string;
-  postContent: string | string[];
+  postType: "header" | "text" | "list" | "quote" | "image"; //OK
+  postId: string; // db'de gerek var mı?
+  postContent: string; //ok
   options?: {
-    size?: "sm" | "md" | "lg";
-    color?: string;
-    textAlignment?: "left" | "center" | "right";
-    listType?: "ul" | "ol";
+    //ok
+    size?: "sm" | "md" | "lg"; //ok
+    color?: string; //ok
+    textAlignment?: "left" | "center" | "right"; //ok
+    listType?: "ul" | "ol"; //ok
   };
 };
 
 export type BlogPost = {
-  blogPostId: string;
-  blogPostArray: BlogPart[];
-  creationDate: string;
+  blogPostId: string; //ok
+  blogPostArray: BlogPart[]; //ok
+  creationDate: string; //ok
   author: string;
-  tags: string[];
+  tags: string[]; //ok
 };
