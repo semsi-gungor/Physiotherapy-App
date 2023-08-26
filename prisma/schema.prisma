@@ -1,0 +1,178 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+//Randevu isteği durumları
+//PENDING -> istek henüz yanıtlanmadı 
+//APPROVED -> istek kabul edildi saat ve gün verildi
+//FULFILLED -> randevu tamamlandı
+//OUTDATED -> istek yanıtlanmadı
+enum Status {
+  PENDING
+  APPROVED
+  FULFILLED
+  OUTDATED
+}
+
+//randevu isteği
+//randevu istekleri bir kullanıcıya bağlı olabilir veya olmayabilir ? ile opsiyonel olarak tanımlandı
+model AppointmentRequest {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  message      String
+  fullName     String
+  email        String
+  tel          String
+  creationDate String
+  serviceId    String
+  createdAt    DateTime @default(now())
+  status       Status   @default(PENDING)
+
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String? @db.ObjectId
+}
+
+model Appointment {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  date       DateTime
+  fullName   String
+  email      String
+  tel        String
+  createdAt  DateTime
+  approvedAt DateTime @default(now())
+  serviceId  String
+
+  personnel   Personnel @relation(fields: [personnelId], references: [id])
+  personnelId String    @db.ObjectId
+}
+
+//personel şeması
+//herbir personelin birden fazla hizmeti olabilir
+model Personnel {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  title            String
+  appointmentCount Int    @default(0)
+
+  serviceIDs String[]  @db.ObjectId
+  services   Service[] @relation(fields: [serviceIDs], references: [id])
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @unique @db.ObjectId
+
+  blogPosts BlogPost[]
+
+  appointsments Appointment[]
+}
+
+//kullanıcı rolleri
+enum UserRole {
+  USER
+  ADMIN
+  PERSONNEL
+}
+
+//kullanıcı
+model User {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  email    String   @unique
+  fullName String
+  password String
+  dob      String
+  tel      String
+  role     UserRole @default(USER)
+  date     DateTime @default(now())
+
+  appointmentRequests AppointmentRequest[]
+
+  personnel Personnel?
+}
+
+//hizmetler şeması
+//herbir hizmetin birden fazla personeli olabilir
+model Service {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  serviceId   String   @unique
+  title       String
+  body        String
+  definition  String
+  treatments  String[]
+  headerImage String
+  bodyImage   String
+
+  personnelIDs String[]    @db.ObjectId
+  personnels   Personnel[] @relation(fields: [personnelIDs], references: [id])
+}
+
+//mesaj modeli
+model Message {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  fullName     String
+  email        String
+  topic        String
+  message      String
+  creationDate String
+  createdAt    DateTime @default(now())
+}
+
+//****************************************************************************************************************************
+
+// postlar için
+
+enum PostModuleType {
+  text
+  header
+  list
+  quote
+  image
+}
+
+enum Size {
+  sm
+  md
+  lg
+}
+
+enum Alignment {
+  left
+  center
+  right
+}
+
+enum ListType {
+  ul
+  ol
+}
+
+model PostModule {
+  id        String         @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  type      PostModuleType
+  color     String?
+  size      Size?
+  alignment Alignment?
+  listType  ListType?
+  order     Int
+
+  blogPost   BlogPost @relation(fields: [blogPostId], references: [id])
+  blogPostId String   @db.ObjectId
+}
+
+model BlogPost {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  summary     String
+  image       String
+  creationDay DateTime @default(now())
+  tags        String[]
+
+  postModules PostModule[]
+
+  personnel   Personnel? @relation(fields: [personnelId], references: [id])
+  personnelId String?    @db.ObjectId
+}
