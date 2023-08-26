@@ -1,21 +1,41 @@
+"use client";
+
 import classes from "./Buttons.module.css";
 import Link from "next/link";
-import Button from "../ui/button/Button";
-import ArrowButton from "../ui/button/ArrowButton";
+import { useSession } from "next-auth/react";
+import { BsPersonFill } from "react-icons/bs";
+import { FC } from "react";
+import Spinner from "../ui/spinner/Spinner";
 
-export default function Buttons() {
+const Buttons: FC = ({}) => {
+  const { data: session, status } = useSession();
+
   return (
     <div className={classes.btnContainer}>
-      <Link href="/uye-girisi">
-        <Button size="md" variant="outlined">
-          GİRİŞ YAP
-        </Button>
-      </Link>
+      {status === "loading" && (
+        <div>
+          <Spinner size={20} />
+        </div>
+      )}
+      {status === "authenticated" && (
+        <Link href="/profil">
+          <div className="group grid place-items-center w-10 h-10 rounded-xl transition hover:bg-[var(--color-5)]">
+            <span className="text-[var(--color-5)] text-2xl transition group-hover:text-white">
+              <BsPersonFill />
+            </span>
+          </div>
+        </Link>
+      )}
+      {status === "unauthenticated" && (
+        <Link href="/uye-girisi">Giriş Yap</Link>
+      )}
       <Link href="randevu-alma">
-        <Button size="md" variant="outlined">
-          RANDEVU AL
-        </Button>
+        <div className="h-10 px-4 bg-[var(--color-5)] text-[var(--color-1)] transition flex items-center justify-center rounded-xl hover:bg-[var(--color-4)]">
+          Randevu AL
+        </div>
       </Link>
     </div>
   );
-}
+};
+
+export default Buttons;

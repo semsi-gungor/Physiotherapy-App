@@ -1,6 +1,16 @@
 .btnContainer {
   display: flex;
   gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btnContainer a {

@@ -2,11 +2,11 @@
 
 import { FaBars } from "react-icons/fa";
 import classes from "@/components/navbar/Bars.module.css";
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useContext } from "react";
 import { uiContext } from "@/context/uiControl";
 
-export default function Bars() {
+const Bars: FC = ({}) => {
   const uiCtx = useContext(uiContext);
 
   return (
@@ -19,4 +19,6 @@ export default function Bars() {
       <FaBars />
     </div>
   );
-}
+};
+
+export default Bars;
