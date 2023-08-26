@@ -1,7 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .square {
+    aspect-ratio: 1/1;
+  }
+  .card {
+    aspect-ratio: 3/4;
+  }
+  .picture {
+    aspect-ratio: 16/9;
+  }
+  .auto {
+    aspect-ratio: auto;
+  }
+}
+
 :root {
-  --nav-bar-lg: 6rem;
+  --nav-bar-lg: 4rem;
   --nav-bar-md: 6rem;
-  --nav-bar-sm: 4rem;
+  --nav-bar-sm: 3rem;
   --admin-nav-width: 4.5rem;
   --main-padding: 0 10rem;
 
@@ -20,11 +39,43 @@
   --color-c: #d97a14;
 
   --error: rgb(255, 94, 65);
+  --soft-error: rgb(255, 122, 98);
   --warning: rgb(255, 220, 65);
   --info: rgb(65, 151, 255);
   --succsess: rgb(65, 255, 81);
   --succsess-800: rgb(0, 170, 14);
   --color-c-blue: rgb(37 99 235);
+  --color-c-soft-blue: rgb(191 219 254);
+
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 10% 3.9%;
+
+  --radius: 0.5rem;
 }
 
 *,
@@ -33,4 +84,23 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-transparent);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-4);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-5);
 }
