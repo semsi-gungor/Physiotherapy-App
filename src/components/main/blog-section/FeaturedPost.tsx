@@ -3,8 +3,9 @@
 import classes from "./Featured.module.css";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
+import { FC } from "react";
 
-export default function FeaturedPost() {
+const FeaturedPost: FC = ({}) => {
   return (
     <div className={classes.container}>
       <h3>Robotik Omurga Cerrahisi ile Yeni Dönem Başlıyor</h3>
@@ -18,4 +19,6 @@ export default function FeaturedPost() {
       </Link>
     </div>
   );
-}
+};
+
+export default FeaturedPost;

@@ -3,14 +3,15 @@
 import { useInView } from "react-intersection-observer";
 import classes from "./Comment.module.css";
 import { BsPersonCircle } from "react-icons/bs";
+import { FC } from "react";
 
-type Props = {
+interface CommentProps {
   name: string;
   text: string;
   queue: number;
-};
+}
 
-export default function Comment({ name, text, queue }: Props) {
+const Comment: FC<CommentProps> = ({ text, queue, name }) => {
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -34,4 +35,6 @@ export default function Comment({ name, text, queue }: Props) {
       </div>
     </div>
   );
-}
+};
+
+export default Comment;

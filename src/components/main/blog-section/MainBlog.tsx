@@ -5,8 +5,9 @@ import Image from "next/image";
 import blog from "../../../../public/bg-1.jpg";
 import FeaturedPost from "./FeaturedPost";
 import { useInView } from "react-intersection-observer";
+import { FC } from "react";
 
-export default function MainBlog() {
+const MainBlog: FC = ({}) => {
   const { ref, inView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -31,4 +32,6 @@ export default function MainBlog() {
       </div>
     </div>
   );
-}
+};
+
+export default MainBlog;

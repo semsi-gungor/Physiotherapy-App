@@ -12,7 +12,8 @@
 .title h2 {
   font-size: 3rem;
   color: var(--color-6);
-
+  font-weight: 700;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
 }
 

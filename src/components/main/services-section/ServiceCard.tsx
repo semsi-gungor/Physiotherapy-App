@@ -4,14 +4,15 @@ import classes from "./ServiceCard.module.css";
 import Image, { StaticImageData } from "next/image";
 import { useInView } from "react-intersection-observer";
 import { useRouter } from "next/navigation";
+import { FC } from "react";
 
-type ServiceCardProps = {
+interface ServiceCardProps {
   title: string;
   image: StaticImageData;
   link: string;
-};
+}
 
-export default function ServiceCard({ title, image, link }: ServiceCardProps) {
+const ServiceCard: FC<ServiceCardProps> = ({ title, image, link }) => {
   const router = useRouter();
 
   const { ref, inView } = useInView({
@@ -40,4 +41,5 @@ export default function ServiceCard({ title, image, link }: ServiceCardProps) {
       </div>
     </div>
   );
-}
+};
+export default ServiceCard;

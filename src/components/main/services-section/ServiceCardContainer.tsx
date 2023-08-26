@@ -3,8 +3,9 @@
 import classes from "./ServiceCardContainer.module.css";
 import ServiceCard from "./ServiceCard";
 import { services } from "@/dummy-api/services";
+import { FC } from "react";
 
-export default function ServiceCardContainer() {
+const ServiceCardContainer: FC = ({}) => {
   return (
     <div className={classes.container}>
       {services.map((service) => {
@@ -19,4 +20,6 @@ export default function ServiceCardContainer() {
       })}
     </div>
   );
-}
+};
+
+export default ServiceCardContainer;

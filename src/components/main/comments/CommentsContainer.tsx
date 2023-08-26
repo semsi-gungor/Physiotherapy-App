@@ -2,6 +2,7 @@
 
 import classes from "./Comments.module.css";
 import Comment from "./Comment";
+import { FC } from "react";
 
 const comments = [
   {
@@ -18,7 +19,7 @@ const comments = [
   },
 ];
 
-export default function CommentsContainer() {
+const CommentsContainer: FC = ({}) => {
   return (
     <div className={classes.container}>
       {comments.map((comment, index) => {
@@ -33,4 +34,6 @@ export default function CommentsContainer() {
       })}
     </div>
   );
-}
+};
+
+export default CommentsContainer;
