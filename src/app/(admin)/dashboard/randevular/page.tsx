@@ -21,7 +21,7 @@ export type Appointment = {
   email: string;
 };
 
-const page: FC = () => {
+const Page: FC = () => {
   const columns = useMemo<ColumnDef<Appointment>[]>(
     () => [
       { accessorKey: "appointmentId", header: "ID" },
@@ -52,9 +52,10 @@ const page: FC = () => {
         id: "actions",
         cell: ({ row }) => {
           return (
-            <RowAction title="Randevu Düzenleme">
-              <Form original={row.original} />
-            </RowAction>
+            // <RowAction title="Randevu Düzenleme">
+            //   <Form original={row.original} />
+            // </RowAction>
+            <div></div>
           );
         },
       },
@@ -75,9 +76,7 @@ function Form({ original }: { original: Appointment }) {
 
   const { errors } = formState;
 
-  function onSubmit(data: FieldValues) {
-    console.log("submitted", data, "id:", original.appointmentId);
-  }
+  function onSubmit(data: FieldValues) {}
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -136,4 +135,4 @@ function Form({ original }: { original: Appointment }) {
   );
 }
 
-export default page;
+export default Page;
