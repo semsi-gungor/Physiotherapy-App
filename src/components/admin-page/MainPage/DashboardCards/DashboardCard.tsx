@@ -5,10 +5,14 @@ import { IconType } from "react-icons";
 interface DashboardCardProps {
   title: string;
   icon: IconType;
-  body: string;
+  children: React.ReactNode;
 }
 
-const DashboardCard: FC<DashboardCardProps> = ({ title, icon: Icon, body }) => {
+const DashboardCard: FC<DashboardCardProps> = ({
+  title,
+  icon: Icon,
+  children,
+}) => {
   return (
     <div className={classes.container}>
       <div className={classes.title}>
@@ -17,7 +21,7 @@ const DashboardCard: FC<DashboardCardProps> = ({ title, icon: Icon, body }) => {
           <Icon />
         </span>
       </div>
-      <div className={classes.body}>{body}</div>
+      <div className={classes.body}>{children}</div>
     </div>
   );
 };

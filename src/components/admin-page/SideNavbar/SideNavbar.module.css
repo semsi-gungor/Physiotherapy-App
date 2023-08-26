@@ -21,3 +21,22 @@
   justify-content: center;
   gap: 1rem;
 }
+
+.logout {
+  position: fixed;
+  bottom: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--error);
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 300ms;
+}
+
+.logout:hover {
+  background-color: var(--color-transparent);
+}

@@ -1,0 +1,6 @@
+.container {
+  grid-area: 4 / 7 / 11 / 13;
+
+  display: flex;
+  gap: 1rem;
+}

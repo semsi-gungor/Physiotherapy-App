@@ -21,7 +21,7 @@ const Chart: FC<ChartProps> = ({ data, color, title }) => {
   return (
     <div className={classes.container}>
       <h2 className={classes.title}>{title}</h2>
-      <ResponsiveContainer width={"50%"} className={classes.chart}>
+      <ResponsiveContainer width={"100%"} className={classes.chart}>
         <BarChart
           data={data}
           margin={{
@@ -32,10 +32,9 @@ const Chart: FC<ChartProps> = ({ data, color, title }) => {
           }}
         >
           <CartesianGrid strokeDasharray="4 4" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name" angle={-25} />
           <YAxis />
           <Tooltip />
-          <Legend />
           <Bar dataKey="value" fill={color} />
         </BarChart>
       </ResponsiveContainer>

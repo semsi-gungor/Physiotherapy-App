@@ -8,9 +8,12 @@ import {
   BsCalendar2WeekFill,
   BsFillChatLeftQuoteFill,
   BsFillGearFill,
+  BsPersonFillGear,
 } from "react-icons/bs";
+import { BiLogOut } from "react-icons/bi";
 import { AiFillHome } from "react-icons/ai";
 import NavLink from "./NavLink";
+import { signOut } from "next-auth/react";
 
 interface SideNavbarProps {}
 
@@ -31,6 +34,13 @@ const SideNavbar: FC<SideNavbarProps> = ({}) => {
           title={"Üyeler"}
           active={path === "/dashboard/uyeler"}
         />
+
+        <NavLink
+          icon={BsPersonFillGear}
+          link="/dashboard/personel"
+          title={"Personel"}
+          active={path === "/dashboard/personel"}
+        />
         <NavLink
           icon={BsCalendar2WeekFill}
           link="/dashboard/randevular"
@@ -50,6 +60,14 @@ const SideNavbar: FC<SideNavbarProps> = ({}) => {
           active={path === "/dashboard/hizmetler"}
         />
       </ul>
+      <div
+        className={classes.logout}
+        onClick={() => {
+          signOut();
+        }}
+      >
+        <BiLogOut />
+      </div>
     </div>
   );
 };
