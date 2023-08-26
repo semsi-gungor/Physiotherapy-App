@@ -11,6 +11,8 @@ import { useMutation } from "@tanstack/react-query";
 import { MessageSchema } from "../../models/Message";
 import { z } from "zod";
 import Toast from "../../components/ui/toast/Toast";
+import LoadingDisababler from "../ui/spinner-and-disabler/LoadingDisababler";
+import { dateToString } from "@/helpers/date-helpers";
 
 type Message = z.infer<typeof MessageSchema>;
 
@@ -30,10 +32,7 @@ const ContactForm: FC = ({}) => {
 
   const createMessage = useMutation({
     mutationFn: async (message: Message) => {
-      const response = await axios.post(
-        "/api/message",
-        JSON.stringify(message)
-      );
+      const response = await axios.post("/api/message", message);
 
       return response;
     },
@@ -57,11 +56,12 @@ const ContactForm: FC = ({}) => {
 
   async function onSubmit(data: FieldValues) {
     let date = new Date();
+    let dateString = dateToString(date);
     let message = {
       fullName: data.isim,
       email: data.email,
       topic: data.topic,
-      date: date,
+      creationDate: dateString,
       message: data.mesaj,
     };
     setOpenToast(true);
@@ -70,6 +70,7 @@ const ContactForm: FC = ({}) => {
 
   return (
     <>
+      <LoadingDisababler isLoading={createMessage.isLoading} />
       <Toast
         open={openToast}
         setOpen={setOpenToast}
@@ -84,7 +85,11 @@ const ContactForm: FC = ({}) => {
       {createMessage.isError && (
         <div>
           {fieldErrors.map((error) => {
-            return <p style={{ color: "var(--error)" }}>{error}</p>;
+            return (
+              <p key={error} style={{ color: "var(--error)" }}>
+                {error}
+              </p>
+            );
           })}
         </div>
       )}
@@ -120,7 +125,7 @@ const ContactForm: FC = ({}) => {
           register={register}
           errorMessage={errors.mesaj?.message?.toString()}
         />
-        <Button size="md" disabled={createMessage.isLoading}>
+        <Button size="md" disabled={createMessage.isLoading} type="submit">
           Gönder
         </Button>
       </form>
