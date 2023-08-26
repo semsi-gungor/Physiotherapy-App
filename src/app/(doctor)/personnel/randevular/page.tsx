@@ -1,8 +1,13 @@
 import { FC } from "react";
-import AppointmentPage from "@/components/personnel-page/Appointments/AppointmentPage";
+import QueryProvider from "@/components/providers/QueryProvider/QueryProvider";
+import UpcomingAppointments from "@/components/personnel-page/UpcomingAppointments/UpcomingAppointments";
 
-const Page: FC = ({}) => {
-  return <AppointmentPage />;
+const Page: FC = () => {
+  return (
+    <QueryProvider>
+      <UpcomingAppointments />
+    </QueryProvider>
+  );
 };
 
 export default Page;
