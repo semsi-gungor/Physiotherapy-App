@@ -1,15 +1,20 @@
 import { FC } from "react";
-import classes from "./ServiceBody.module.css";
 import ServiceDefinition from "./ServiceDefinition";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import TreatmentsList from "./TreatmentsList";
+import { Poppins } from "next/font/google";
+
+const font = Poppins({
+  weight: ["300", "400", "500", "600", "700", "700"],
+  subsets: ["latin"],
+});
 
 interface ServiceBodyProps {
   definition: string;
   treatments: string[];
   body: string;
   title: string;
-  img: StaticImageData;
+  img: string;
 }
 
 const ServiceBody: FC<ServiceBodyProps> = ({
@@ -20,20 +25,26 @@ const ServiceBody: FC<ServiceBodyProps> = ({
   img,
 }) => {
   return (
-    <div className={classes.container}>
-      <div className={classes.body}>
-        <p>{body}</p>
+    <div className={`w-full flex flex-col ${font.className}`}>
+      <div className="w-full py-16 grid place-items-center">
+        <p className="text-lg px-4 lg-px-0 lg:text-xl font-semibold max-w-lg text-center">
+          {body}
+        </p>
       </div>
-      <div className={classes.infoContainer}>
-        <ServiceDefinition definition={definition} title={title} />
-        {treatments.length > 0 && <TreatmentsList treatments={treatments} />}
-      </div>
-      <div className={classes.imageContainer}>
-        <Image
-          src={img}
-          alt={title}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
+      <div className="flex flex-col w-full h-auto lg:h-screen md:flex-row">
+        <div className="lg:flex-1 flex flex-col justify-center gap-4 px-8">
+          <ServiceDefinition definition={definition} title={title} />
+          {treatments.length > 0 && <TreatmentsList treatments={treatments} />}
+        </div>
+        <div className="hidden relative lg:flex-1 lg:block">
+          <Image
+            src={img}
+            alt={title}
+            fill
+            style={{ objectFit: "cover" }}
+            quality={50}
+          />
+        </div>
       </div>
     </div>
   );

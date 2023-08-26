@@ -6,21 +6,26 @@ import ServiceBody from "./ServiceBody/ServiceBody";
 import FormSection from "../FormSection";
 
 interface ServicePageProps {
-  serviceId: string;
+  service: {
+    body: string;
+    bodyImage: string;
+    definition: string;
+    headerImage: string;
+    title: string;
+    treatments: string[];
+  };
 }
 
-const ServicePage: FC<ServicePageProps> = ({ serviceId }) => {
-  const { body, definition, title, image, treatments } = findService(serviceId);
-
+const ServicePage: FC<ServicePageProps> = ({ service }) => {
   return (
     <div className={classes.container}>
-      <ServiceHeader img={image} title={title} />
+      <ServiceHeader img={service.headerImage} title={service.title} />
       <ServiceBody
-        img={image}
-        body={body}
-        definition={definition}
-        treatments={treatments}
-        title={title}
+        img={service.bodyImage}
+        body={service.body}
+        definition={service.definition}
+        treatments={service.treatments}
+        title={service.title}
       />
       <FormSection />
     </div>
