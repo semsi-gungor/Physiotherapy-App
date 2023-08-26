@@ -1,9 +1,8 @@
 import { FC } from "react";
+import BlogPage from "@/components/admin-page/BlogPage/BlogPage";
 
-interface pageProps {}
-
-const page: FC<pageProps> = ({}) => {
-  return <div></div>;
+const page: FC = ({}) => {
+  return <BlogPage />;
 };
 
 export default page;
