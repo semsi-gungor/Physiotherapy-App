@@ -26,16 +26,49 @@
   animation: slide-in 400ms forwards;
 }
 
-@keyframes slide-in {
+@keyframes purple {
   0% {
-    opacity: 0.5;
-    transform: translateY(25px);
+    bottom: 25%;
+    left: 66.666667%;
+  }
+
+  25% {
+    bottom: 40%;
+    left: 80%;
+  }
+
+  75% {
+    bottom: 60%;
+    left: 66.666667%;
   }
 
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    bottom: 25%;
+    left: 66.666667%;
   }
+}
+
+.purple {
+  animation: purple 30s infinite;
+}
+
+@keyframes orange {
+  0% {
+    left: 25%;
+    top: 0%;
+  }
+  50% {
+    left: 40%;
+    top: 50%;
+  }
+  100% {
+    left: 25%;
+    top: 0%;
+  }
+}
+
+.orange {
+  animation: orange 30s infinite;
 }
 
 /* Mobile */

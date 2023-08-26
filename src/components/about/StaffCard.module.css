@@ -13,22 +13,22 @@
 }
 
 .imageContainer {
-  grid-area: 1 / 1 / 6 / 6;
+  grid-area: 1 / 1 / 8 / 6;
 }
 
 .name {
-  grid-area: 6 / 1 / 7 / 6;
+  grid-area: 8 / 1 / 9 / 6;
   display: grid;
   place-items: center;
 
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
 
   color: var(--color-6);
 }
 
 .title {
-  grid-area: 7 / 1 / 8 / 6;
+  grid-area: 9 / 1 / 10 / 6;
   display: grid;
   place-items: center;
 

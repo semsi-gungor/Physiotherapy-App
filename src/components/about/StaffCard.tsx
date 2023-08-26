@@ -17,7 +17,7 @@ const StaffCard: FC = ({}) => {
     if (isInView) {
       animate.start("visible");
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   return (
     <motion.div
@@ -45,7 +45,7 @@ const StaffCard: FC = ({}) => {
         }}
         initial="hidden"
         animate={animate}
-        transition={{ duration: 0.4, delay: 1.8 }}
+        transition={{ duration: 0.4, delay: 1.6 }}
         className={classes.name}
       >
         Doctor NAME
