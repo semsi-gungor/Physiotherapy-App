@@ -4,20 +4,37 @@ import { Appointment } from "../MainPage";
 import { AiFillPhone, AiOutlineMail } from "react-icons/ai";
 
 interface AppointmentDetailsProps {
-  appointment: Appointment;
+  appointment: {
+    id: string;
+    date: Date;
+    fullName: string;
+    email: string;
+    tel: string;
+    createdAt: Date;
+    approvedAt: Date;
+    serviceId: string;
+    personnelId: string;
+  };
 }
 
 const AppointmentDetails: FC<AppointmentDetailsProps> = ({ appointment }) => {
-  const telno = appointment.phoneNum;
-  const name = appointment.fullName;
-  const email = appointment.email;
-  const message = appointment.message;
+  let telno = "";
+  let name = "";
+  let email = "";
 
-  let dobDate = new Date(appointment.dob).getTime();
-  let now = new Date().getTime();
-  let ageDate = now - dobDate;
-
-  const age = new Date(ageDate).getUTCFullYear() - 1970;
+  if (appointment) {
+    telno = appointment.tel;
+    name = appointment.fullName;
+    email = appointment.email;
+  } else {
+    return (
+      <div className={classes.container}>
+        <div className="w-full h-full flex items-center justify-center text-3xl text-gray-400 font-bold">
+          Randevu detayları yok.
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={classes.container}>
@@ -30,10 +47,6 @@ const AppointmentDetails: FC<AppointmentDetailsProps> = ({ appointment }) => {
             <p>İsim Soyisim: </p>
             <p>{name}</p>
           </div>
-          <div className={classes.credentials}>
-            <p>Yaş: </p>
-            <p>{age}</p>
-          </div>
           <div className={classes.phone}>
             <AiFillPhone />
             <p>{telno}</p>
@@ -43,7 +56,6 @@ const AppointmentDetails: FC<AppointmentDetailsProps> = ({ appointment }) => {
             <p>{email}</p>
           </div>
         </div>
-        <p className={classes.message}>{message}</p>
       </div>
     </div>
   );
