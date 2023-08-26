@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useReducer } from "react";
-import { User } from "@/app/(admin)/users/columns";
+import { FC } from "react";
 
 interface AdminContext {
   isInputModalShow: boolean;
@@ -37,11 +37,11 @@ const initialState = {
   isInputModalShow: false,
 };
 
-interface Props {
+interface adminContextProps {
   children: React.ReactNode;
 }
 
-export default function AdminContextProvier({ children }: Props) {
+const AdminContextProvier: FC<adminContextProps> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   function displayInputModalHandler() {
@@ -61,4 +61,6 @@ export default function AdminContextProvier({ children }: Props) {
   return (
     <adminContext.Provider value={value}>{children}</adminContext.Provider>
   );
-}
+};
+
+export default AdminContextProvier;

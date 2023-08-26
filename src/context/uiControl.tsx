@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useReducer } from "react";
+import { FC, createContext, useReducer } from "react";
 
 interface UiContext {
   isSideMenuShow: boolean;
@@ -56,7 +56,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function UIContextProvier({ children }: Props) {
+const UIContextProvier: FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   function displayMenuHandler() {
@@ -85,4 +85,6 @@ export default function UIContextProvier({ children }: Props) {
   };
 
   return <uiContext.Provider value={value}>{children}</uiContext.Provider>;
-}
+};
+
+export default UIContextProvier;
