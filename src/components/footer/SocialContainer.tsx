@@ -8,8 +8,9 @@ import {
   AiOutlineFacebook,
 } from "react-icons/ai";
 import SocialIcon from "./SocialIcon";
+import { FC } from "react";
 
-export default function SocialContainer() {
+const SocialContainer: FC = () => {
   return (
     <div className={classes.container}>
       <SocialIcon icon={AiOutlineFacebook} link="#" color="#4267B2" />
@@ -18,4 +19,6 @@ export default function SocialContainer() {
       <SocialIcon icon={AiOutlineWhatsApp} link="#" color="#25D366" />
     </div>
   );
-}
+};
+
+export default SocialContainer;

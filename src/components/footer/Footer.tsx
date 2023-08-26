@@ -5,8 +5,16 @@ import SocialContainer from "./SocialContainer";
 import Image from "next/image";
 import logo from "../../../public/logo.png";
 import { BiMap, BiPhone, BiEnvelope } from "react-icons/bi";
+import client from "@/lib/prisma";
 
-export default function Footer() {
+export default async function Footer() {
+  const services = await client.service.findMany({
+    select: {
+      id: true,
+      title: true,
+    },
+  });
+
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
@@ -37,27 +45,13 @@ export default function Footer() {
         </li>
       </InfoList>
       <InfoList header="Hizmetlerimiz">
-        <li>
-          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Lorem ipsum dolor sit amet, consectetur</Link>
-        </li>
+        {services.map((service) => {
+          return (
+            <li key={service.id}>
+              <Link href={`/hizmetlerimiz/${service.id}`}>{service.title}</Link>
+            </li>
+          );
+        })}
       </InfoList>
 
       <p className={classes.copyright}>© Copyright 2023 </p>

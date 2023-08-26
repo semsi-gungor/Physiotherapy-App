@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   min-height: 30rem;
-  background-color: var(--color-6);
+  background-color: rgb(32, 32, 32);
   display: flex;
   padding: 0 4rem;
   padding-top: 2rem;

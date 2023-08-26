@@ -3,6 +3,7 @@
 import { useState } from "react";
 import classes from "./SocialIcon.module.css";
 import { IconBase, IconType } from "react-icons/lib";
+import { FC } from "react";
 
 type Props = {
   icon: IconType;
@@ -10,11 +11,7 @@ type Props = {
   color: string;
 };
 
-export default function SocialIcon({
-  icon: Icon,
-  link,
-  color: hoverColor,
-}: Props) {
+const SocialIcon: FC<Props> = ({ icon: Icon, link, color: hoverColor }) => {
   const [color, setColor] = useState("rgb(39, 39, 64)");
 
   return (
@@ -32,4 +29,5 @@ export default function SocialIcon({
       <Icon />
     </a>
   );
-}
+};
+export default SocialIcon;
