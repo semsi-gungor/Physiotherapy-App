@@ -1,7 +1,6 @@
 "use client";
 
 import { FC, ReactNode, useState } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
 import classes from "./RowAction.module.css";
 import { LuMoreHorizontal } from "react-icons/lu";
 import Button from "@/components/ui/button/Button";
@@ -10,20 +9,20 @@ import * as Popover from "@radix-ui/react-popover";
 import Modal from "@/components/ui/modal/Modal";
 
 interface RowActionProps {
-  title: string;
-  children: ReactNode;
+  children: ReactNode[];
   onSubmit?: () => Promise<void>;
 }
 
-const RowAction: FC<RowActionProps> = ({ title, children, onSubmit }) => {
+const RowAction: FC<RowActionProps> = ({ children, onSubmit }) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
 
   return (
     <Popover.Root open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
       <Popover.Trigger asChild>
         <span>
-          <Button size="full" variant="ghost">
+          <Button size="square" variant="ghost">
             <LuMoreHorizontal />
           </Button>
         </span>
@@ -40,22 +39,32 @@ const RowAction: FC<RowActionProps> = ({ title, children, onSubmit }) => {
                 exit={{ opacity: 0 }}
                 transition={{ type: "spring", stiffness: 100 }}
               >
-                <li className={classes.listItem} onClick={() => {}}>
-                  Sil
-                </li>
                 <Modal
-                  isModalOpen={isDialogOpen}
-                  setIsModalOpen={setIsDialogOpen}
+                  isModalOpen={isDeleteDialogOpen}
+                  setIsModalOpen={setIsDeleteDialogOpen}
                 >
                   <Modal.Button asChild>
-                    <li className={classes.listItem} onClick={() => {}}>
-                      Düzenle
-                    </li>
+                    <li className={classes.listItem}>Sil</li>
                   </Modal.Button>
                   <AnimatePresence>
-                    {isDialogOpen && (
-                      <Modal.Content title={title}>
-                        <div className={classes.body}>{children}</div>
+                    {isDeleteDialogOpen && (
+                      <Modal.Content>
+                        <div className={classes.body}>{children[0]}</div>
+                      </Modal.Content>
+                    )}
+                  </AnimatePresence>
+                </Modal>
+                <Modal
+                  isModalOpen={isEditDialogOpen}
+                  setIsModalOpen={setIsEditDialogOpen}
+                >
+                  <Modal.Button asChild>
+                    <li className={classes.listItem}>Düzenle</li>
+                  </Modal.Button>
+                  <AnimatePresence>
+                    {isEditDialogOpen && (
+                      <Modal.Content>
+                        <div className={classes.body}>{children[1]}</div>
                       </Modal.Content>
                     )}
                   </AnimatePresence>

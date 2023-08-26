@@ -71,9 +71,9 @@ export function DataTable<TData, TValue>({
       prevPage={table.previousPage}
       caption={caption}
       currentPage={table.getState().pagination.pageIndex + 1}
-      pageCount={table.getPageCount()}
+      pageCount={table?.getPageCount()}
       lastPage={() => {
-        table.setPageIndex(table.getPageCount() - 1);
+        table.setPageIndex(table?.getPageCount() - 1);
       }}
       firstPage={() => {
         table.setPageIndex(0);
